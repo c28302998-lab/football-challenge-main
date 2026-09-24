@@ -94,12 +94,12 @@ export default function Hero() {
 
         {/* Main Slogan */}
         <motion.h1 variants={itemVariants} className="text-4xl sm:text-6xl md:text-7xl font-black tracking-tight text-white uppercase font-sans max-w-4xl leading-none">
-          <span className="green-gradient-text drop-shadow-md">{siteSettings?.heroTitle || t.hero.slogan}</span>
+          <span className="green-gradient-text drop-shadow-md">{t.hero.slogan}</span>
         </motion.h1>
 
         {/* Subtitle */}
         <motion.p variants={itemVariants} className="mt-6 text-base sm:text-lg md:text-xl text-gray-300 max-w-3xl font-light leading-relaxed">
-          {siteSettings?.heroDescription || t.hero.subtext}
+          {t.hero.subtext}
         </motion.p>
 
         {/* CTA Buttons Group */}
@@ -112,7 +112,7 @@ export default function Hero() {
             onClick={() => setIsTrialModalOpen(true)}
             className="w-full sm:w-auto flex items-center justify-center gap-3 px-8 py-4 text-sm font-bold uppercase tracking-wider text-white bg-emerald-600 rounded-xl shadow-xl shadow-emerald-900/40 cursor-pointer group"
           >
-            <span>{siteSettings?.heroButtonText || t.hero.ctaTrial}</span>
+            <span>{t.hero.ctaTrial}</span>
             <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
           </motion.button>
 

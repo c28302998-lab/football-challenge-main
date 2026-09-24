@@ -110,37 +110,22 @@ export default function ContactsSection() {
 
           {/* Interactive Google Map Embed - Neon Styled */}
           <div className="lg:col-span-2 glass-panel rounded-3xl overflow-hidden border border-neutral-800 relative h-96 lg:h-auto min-h-[400px] group">
-            {/* Overlay to block all interaction so the map stays centered with our custom pin */}
-            <div className="absolute inset-0 z-20 cursor-default flex flex-col items-center justify-center bg-transparent">
-              <a 
-                href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(siteSettings?.contactAddress || t.contacts.addressText)}`}
-                target="_blank" 
-                rel="noreferrer"
-                className="absolute bottom-6 bg-neutral-950/80 backdrop-blur text-white px-6 py-3 rounded-xl border border-emerald-500/30 hover:border-emerald-400 hover:bg-emerald-950/50 transition-all font-bold text-sm tracking-wide flex items-center gap-2"
-              >
-                <MapPin className="w-4 h-4 text-emerald-400" />
-                Открыть в Google Maps
-              </a>
-            </div>
             
-            {/* Floating glowing radar pin */}
-            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10 pointer-events-none">
-              <div className="relative flex items-center justify-center">
-                <div className="w-6 h-6 bg-emerald-500 rounded-full z-10 shadow-[0_0_20px_rgba(16,185,129,1)]"></div>
-                <div className="w-16 h-16 bg-emerald-500/30 rounded-full absolute animate-ping"></div>
-                <div className="w-24 h-24 bg-emerald-500/10 rounded-full absolute animate-pulse"></div>
-                
-                {/* Popup label */}
-                <div className="absolute -top-12 bg-neutral-950 text-white text-xs font-bold px-3 py-1.5 rounded-lg border border-emerald-500/30 shadow-xl whitespace-nowrap opacity-100 transition-opacity duration-300">
-                  {siteSettings?.contactAddress || t.contacts.addressText}
-                </div>
-              </div>
-            </div>
+            {/* Open in Google Maps button */}
+            <a 
+              href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(siteSettings?.contactAddress || t.contacts.addressText)}`}
+              target="_blank" 
+              rel="noreferrer"
+              className="absolute bottom-6 left-1/2 transform -translate-x-1/2 bg-neutral-950/80 backdrop-blur text-white px-6 py-3 rounded-xl border border-emerald-500/30 hover:border-emerald-400 hover:bg-emerald-950/50 transition-all font-bold text-sm tracking-wide flex items-center gap-2 z-20"
+            >
+              <MapPin className="w-4 h-4 text-emerald-400" />
+              {t.contacts.openMap || "Открыть в Google Maps"}
+            </a>
 
             <iframe
               title="Football Challenge Map Location"
               src={`https://maps.google.com/maps?q=${encodeURIComponent(siteSettings?.contactAddress || t.contacts.addressText)}&t=&z=14&ie=UTF8&iwloc=&output=embed`}
-              className="w-full h-full border-0 transition-all duration-700 pointer-events-none"
+              className="w-full h-full border-0 transition-all duration-700"
               style={{ filter: "invert(100%) hue-rotate(180deg) brightness(1.1) contrast(1.3) sepia(10%)" }}
               allowFullScreen=""
               loading="lazy"

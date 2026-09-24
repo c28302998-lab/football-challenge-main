@@ -139,11 +139,11 @@ export default function TeamsSection() {
                             <div className="flex justify-center gap-4 mb-4">
                                <div className="text-center">
                                  <div className="text-white font-black font-mono text-lg">{player.goals}</div>
-                                 <div className="text-[10px] text-gray-400 uppercase font-bold">Голы</div>
+                                 <div className="text-[10px] text-gray-400 uppercase font-bold">{t.teams.goals}</div>
                                </div>
                                <div className="text-center">
                                  <div className="text-white font-black font-mono text-lg">{player.assists || 0}</div>
-                                 <div className="text-[10px] text-gray-400 uppercase font-bold">Пасы</div>
+                                 <div className="text-[10px] text-gray-400 uppercase font-bold">{t.teams.assists}</div>
                                </div>
                             </div>
 
@@ -151,7 +151,7 @@ export default function TeamsSection() {
                               onClick={() => setSelectedPlayer(player)}
                               className="w-full py-2.5 rounded-xl border border-emerald-500/50 text-emerald-400 text-xs font-bold uppercase tracking-wider hover:bg-emerald-500 hover:text-white transition-colors cursor-pointer"
                             >
-                              Подробнее
+                              {t.teams.moreInfo}
                             </button>
                           </div>
                         </div>
@@ -335,27 +335,27 @@ export default function TeamsSection() {
                 <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 mb-6">
                   <div className="bg-neutral-950 p-4 rounded-3xl border border-neutral-800 text-center flex flex-col justify-center min-h-[100px]">
                     <div className="text-3xl font-black font-mono text-white mb-1">{selectedPlayer.goals}</div>
-                    <div className="text-[10px] text-gray-400 uppercase font-bold tracking-wider">Голы</div>
+                    <div className="text-[10px] text-gray-400 uppercase font-bold tracking-wider">{t.teams.goals}</div>
                   </div>
                   <div className="bg-neutral-950 p-4 rounded-3xl border border-neutral-800 text-center flex flex-col justify-center min-h-[100px]">
                     <div className="text-3xl font-black font-mono text-white mb-1">{selectedPlayer.assists || 0}</div>
-                    <div className="text-[10px] text-gray-400 uppercase font-bold tracking-wider">Пасы</div>
+                    <div className="text-[10px] text-gray-400 uppercase font-bold tracking-wider">{t.teams.assists}</div>
                   </div>
                   <div className="bg-neutral-950 p-4 rounded-3xl border border-neutral-800 text-center flex flex-col justify-center min-h-[100px]">
                     <div className="text-3xl font-bold font-mono text-white mb-1">{selectedPlayer.gamesPlayed || 0}</div>
-                    <div className="text-[10px] text-gray-400 uppercase font-bold tracking-wider">Матчи</div>
+                    <div className="text-[10px] text-gray-400 uppercase font-bold tracking-wider">{t.teams.matchesPlayed}</div>
                   </div>
                   <div className="bg-neutral-950 p-4 rounded-3xl border border-neutral-800 text-center flex flex-col justify-center min-h-[100px]">
-                    <div className="text-3xl font-bold font-mono text-white mb-1">{selectedPlayer.height || '-'} <span className="text-base">см</span></div>
-                    <div className="text-[10px] text-gray-400 uppercase font-bold tracking-wider">Рост</div>
+                    <div className="text-3xl font-bold font-mono text-white mb-1">{selectedPlayer.height || '-'} <span className="text-base">{t.teams.cm}</span></div>
+                    <div className="text-[10px] text-gray-400 uppercase font-bold tracking-wider">{t.teams.height}</div>
                   </div>
                   <div className="bg-neutral-950 p-4 rounded-3xl border border-neutral-800 text-center flex flex-col justify-center min-h-[100px]">
-                    <div className="text-3xl font-bold font-mono text-white mb-1">{selectedPlayer.weight || '-'} <span className="text-base">кг</span></div>
-                    <div className="text-[10px] text-gray-400 uppercase font-bold tracking-wider">Вес</div>
+                    <div className="text-3xl font-bold font-mono text-white mb-1">{selectedPlayer.weight || '-'} <span className="text-base">{t.teams.kg}</span></div>
+                    <div className="text-[10px] text-gray-400 uppercase font-bold tracking-wider">{t.teams.weight}</div>
                   </div>
                   <div className="bg-neutral-950 p-4 rounded-3xl border border-neutral-800 text-center flex flex-col justify-center min-h-[100px]">
                     <div className="text-xl font-bold font-sans text-white mb-1 uppercase">{selectedPlayer.foot || '-'}</div>
-                    <div className="text-[10px] text-gray-400 uppercase font-bold tracking-wider">Рабочая нога</div>
+                    <div className="text-[10px] text-gray-400 uppercase font-bold tracking-wider">{t.teams.foot}</div>
                   </div>
                 </div>
                 
@@ -365,7 +365,7 @@ export default function TeamsSection() {
                   </p>
                 ) : (
                   <p className="text-sm text-gray-400 leading-relaxed">
-                    Перспективный игрок академии Football Challenge.
+                    {t.teams.playerBioFallback}
                   </p>
                 )}
               </div>

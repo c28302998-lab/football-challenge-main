@@ -31,6 +31,16 @@ export const translations = {
       historyText: "Football Challenge основан с целью создания современной спортивной экосистемы, где каждый ребенок получает возможность раскрыть свой потенциал под руководством лучших специалистов по европейским стандартам.",
       missionTitle: "Миссия и Ценности",
       missionText: "Воспитание не только профессиональных атлетов, но и сильных личностей. Мы прививаем дисциплину, командный дух, уважение и менталитет победителей.",
+      historyTimeline: [
+        { year: '2022', title: 'Основание', desc: 'Открытие первых групп для детей 6-8 лет. Формирование тренерского штаба.' },
+        { year: '2023', title: 'Первые турниры', desc: 'Участие в городских соревнованиях. Открытие групп для всех возрастов до 12 лет.' },
+        { year: '2024', title: 'Филиалы и Кубки', desc: 'Победа в Зимнем Кубке. Открытие 3 новых локаций. Запуск юношеской команды U-16.' }
+      ],
+      missionPoints: [
+        "Профессиональный рост в футболе",
+        "Развитие лидерских качеств",
+        "Дисциплина и уважение"
+      ],
       staffTitle: "Тренерский Штаб",
       staffSubtitle: "Опытные наставники с лицензиями UEFA A и B",
       partnersTitle: "Официальные Партнеры",
@@ -50,6 +60,14 @@ export const translations = {
       age: "Возраст",
       matchesPlayed: "Игр",
       goals: "Голы",
+      assists: "Пасы",
+      moreInfo: "Подробнее",
+      height: "Рост",
+      weight: "Вес",
+      foot: "Рабочая нога",
+      cm: "см",
+      kg: "кг",
+      playerBioFallback: "Перспективный игрок академии Football Challenge.",
       points: "Очки",
       tableRank: "Место",
       tableTeam: "Команда",
@@ -107,6 +125,8 @@ export const translations = {
       why3Title: "Целевые расходы",
       why3Text: "Средства спонсоров направляются на аренду полей, качественную экипировку, транспорт и организацию соревнований.",
       perksTitle: "Что получает партнер?",
+      investTitle: "Инвестируйте в футбольное будущее",
+      investText: "Мы предлагаем гибкие формы сотрудничества для малого, среднего и крупного бизнеса.",
       perks: [
         "Размещение логотипа на игровых джерси и экипировке",
         "Баннеры на домашнем стадионе и тренировочной базе",
@@ -157,6 +177,7 @@ export const translations = {
       phoneTitle: "Телефоны",
       emailTitle: "Электронная почта",
       socTitle: "Социальные сети",
+      openMap: "Открыть в Google Maps",
       mapTitle: "Карта и локация",
     },
     admin: {
@@ -214,6 +235,16 @@ export const translations = {
       historyText: "Football Challenge заснований з метою створення сучасної спортивної екосистеми, де кожна дитина отримує можливість розкрити свій потенціал під керівництвом найкращих фахівців за європейськими стандартами.",
       missionTitle: "Місія та Цінності",
       missionText: "Виховання не лише професійних атлетів, а й сильних особистостей. Ми прививаємо дисципліну, командний дух, повагу та менталітет переможців.",
+      historyTimeline: [
+        { year: '2022', title: 'Заснування', desc: 'Відкриття перших груп для дітей 6-8 років. Формування тренерського штабу.' },
+        { year: '2023', title: 'Перші турніри', desc: 'Участь у міських змаганнях. Відкриття груп для всіх вікових категорій до 12 років.' },
+        { year: '2024', title: 'Філії та Кубки', desc: 'Перемога в Зимовому Кубку. Відкриття 3 нових локацій. Запуск юнацької команди U-16.' }
+      ],
+      missionPoints: [
+        "Професійне зростання у футболі",
+        "Розвиток лідерських якостей",
+        "Дисципліна та повага"
+      ],
       staffTitle: "Тренерський Штаб",
       staffSubtitle: "Досвідчені наставники з ліцензіями UEFA A та B",
       partnersTitle: "Офіційні Партнери",
@@ -233,6 +264,14 @@ export const translations = {
       age: "Вік",
       matchesPlayed: "Ігор",
       goals: "Голи",
+      assists: "Паси",
+      moreInfo: "Детальніше",
+      height: "Зріст",
+      weight: "Вага",
+      foot: "Робоча нога",
+      cm: "см",
+      kg: "кг",
+      playerBioFallback: "Перспективний гравець академії Football Challenge.",
       points: "Очки",
       tableRank: "Місце",
       tableTeam: "Команда",
@@ -290,6 +329,8 @@ export const translations = {
       why3Title: "Цільові витрати",
       why3Text: "Кошти спонсорів спрямовуються на оренду полів, якісне екіпірування, транспорт та організацію змагань.",
       perksTitle: "Що отримує партнер?",
+      investTitle: "Інвестуйте у футбольне майбутнє",
+      investText: "Ми пропонуємо гнучкі форми співпраці для малого, середнього та великого бізнесу.",
       perks: [
         "Розміщення логотипу на ігрових джерсі та екіпіруванні",
         "Банери на домашньому стадіоні та тренувальній базі",
@@ -340,6 +381,7 @@ export const translations = {
       phoneTitle: "Телефони",
       emailTitle: "Електронна пошта",
       socTitle: "Соціальні мережі",
+      openMap: "Відкрити в Google Maps",
       mapTitle: "Карта та локація",
     },
     admin: {
@@ -397,6 +439,16 @@ export const translations = {
       historyText: "Football Challenge powstało z myślą o stworzeniu nowoczesnego ekosystemu sportowego, w którym każde dziecko ma szansę rozwinąć swój potencjał według najwyższych europejskich standardów.",
       missionTitle: "Misja i Wartości",
       missionText: "Kształtujemy nie tylko profesjonalnych sportowców, ale i silne osobowości. Uczymy dyscypliny, pracy zespołowej, szacunku oraz mentalności zwycięzców.",
+      historyTimeline: [
+        { year: '2022', title: 'Założenie', desc: 'Otwarcie pierwszych grup dla dzieci 6-8 lat. Budowa sztabu szkoleniowego.' },
+        { year: '2023', title: 'Pierwsze turnieje', desc: 'Udział w rozgrywkach miejskich. Otwarcie grup dla wszystkich roczników do 12 lat.' },
+        { year: '2024', title: 'Nowe oddziały', desc: 'Zwycięstwo w Pucharze Zimowym. Otwarcie 3 nowych lokalizacji. Start drużyny U-16.' }
+      ],
+      missionPoints: [
+        "Profesjonalny rozwój piłkarski",
+        "Kształtowanie zdolności przywódczych",
+        "Dyscyplina i szacunek"
+      ],
       staffTitle: "Sztab Szkoleniowy",
       staffSubtitle: "Doświadczeni trenerzy z licencjami UEFA A i B",
       partnersTitle: "Oficjalni Partnerzy",
@@ -416,6 +468,14 @@ export const translations = {
       age: "Wiek",
       matchesPlayed: "Mecze",
       goals: "Bramki",
+      assists: "Asysty",
+      moreInfo: "Więcej",
+      height: "Wzrost",
+      weight: "Waga",
+      foot: "Lepsza noga",
+      cm: "cm",
+      kg: "kg",
+      playerBioFallback: "Obiecujący zawodnik akademii Football Challenge.",
       points: "Punkty",
       tableRank: "Msc",
       tableTeam: "Drużyna",
@@ -473,6 +533,8 @@ export const translations = {
       why3Title: "Wydatki celowe",
       why3Text: "Środki sponsorów przeznaczane są na wynajem boisk, wysokiej jakości sprzęt, transport oraz organizację zawodów.",
       perksTitle: "Co otrzymuje partner?",
+      investTitle: "Zainwestuj w piłkarską przyszłość",
+      investText: "Oferujemy elastyczne formy współpracy dla małych, średnich i dużych przedsiębiorstw.",
       perks: [
         "Umieszczenie logo na koszulkach meczowych i sprzęcie",
         "Banery na stadionie domowym oraz bazie treningowej",
@@ -523,6 +585,7 @@ export const translations = {
       phoneTitle: "Telefony",
       emailTitle: "Adres E-mail",
       socTitle: "Media społecznościowe",
+      openMap: "Otwórz w Google Maps",
       mapTitle: "Lokalizacja na mapie",
     },
     admin: {
@@ -580,6 +643,16 @@ export const translations = {
       historyText: "Football Challenge was established to create a modern sports ecosystem where every child receives the opportunity to unleash their talent under top specialists following top European standards.",
       missionTitle: "Mission & Values",
       missionText: "Nurturing not only professional athletes but also strong individuals. We instill discipline, teamwork, respect, and a winner's mindset.",
+      historyTimeline: [
+        { year: '2022', title: 'Foundation', desc: 'Opening of the first groups for children 6-8 years old. Formation of the coaching staff.' },
+        { year: '2023', title: 'First tournaments', desc: 'Participation in city competitions. Opening groups for all ages up to 12 years.' },
+        { year: '2024', title: 'Branches & Cups', desc: 'Victory in the Winter Cup. Opening of 3 new locations. Launch of the U-16 youth team.' }
+      ],
+      missionPoints: [
+        "Professional growth in football",
+        "Leadership skills development",
+        "Discipline and respect"
+      ],
       staffTitle: "Coaching Staff",
       staffSubtitle: "Experienced mentors holding UEFA A and B licenses",
       partnersTitle: "Official Partners",
@@ -599,6 +672,14 @@ export const translations = {
       age: "Age",
       matchesPlayed: "MP",
       goals: "Goals",
+      assists: "Assists",
+      moreInfo: "More Info",
+      height: "Height",
+      weight: "Weight",
+      foot: "Preferred Foot",
+      cm: "cm",
+      kg: "kg",
+      playerBioFallback: "Promising player of the Football Challenge Academy.",
       points: "Pts",
       tableRank: "Pos",
       tableTeam: "Team",
@@ -656,6 +737,8 @@ export const translations = {
       why3Title: "Targeted Expenses",
       why3Text: "Sponsorship funds cover pitch rentals, high-quality equipment, transport, and tournament organization.",
       perksTitle: "What Partners Receive",
+      investTitle: "Invest in the football future",
+      investText: "We offer flexible partnership models for small, medium, and large businesses.",
       perks: [
         "Logo placement on official match jerseys and team apparel",
         "Banners at the home stadium and training center",
@@ -707,6 +790,7 @@ export const translations = {
       emailTitle: "Email Address",
       socTitle: "Social Channels",
       mapTitle: "Location Map",
+      openMap: "Open in Google Maps",
     },
     admin: {
       title: "ADMIN PANEL (CMS)",

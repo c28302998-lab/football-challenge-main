@@ -94,10 +94,10 @@ export default function SponsorsSection() {
               <div className="glass-panel-accent p-8 rounded-2xl inline-block text-left max-w-md w-full">
                 <Award className="w-10 h-10 text-emerald-400 mb-4" />
                 <h4 className="text-xl font-bold text-white uppercase mb-2">
-                  Инвестируйте в футбольное будущее
+                  {t.sponsors.investTitle}
                 </h4>
                 <p className="text-xs text-gray-300 mb-6">
-                  Мы предлагаем гибкие формы сотрудничества для малого, среднего и крупного бизнеса.
+                  {t.sponsors.investText}
                 </p>
                 <button
                   onClick={() => setIsSponsorModalOpen(true)}
@@ -114,7 +114,7 @@ export default function SponsorsSection() {
         {/* Current Partners Logos - Animated Marquee */}
         <div className="text-center w-full mt-12 overflow-hidden">
           <span className="text-xs font-bold uppercase tracking-widest text-gray-400 block mb-6">
-            Официальные спонсоры
+            {t.about.partnersTitle}
           </span>
           
           {/* Marquee Wrapper */}

@@ -27,10 +27,10 @@ export default function AboutSection() {
             FOOTBALL CHALLENGE ACADEMY
           </div>
           <h2 className="text-3xl sm:text-5xl font-black text-white uppercase tracking-tight">
-            {siteSettings.aboutTitle || t.about.title}
+            {t.about.title}
           </h2>
           <p className="mt-4 text-gray-400 text-base sm:text-lg">
-            {siteSettings.aboutSubtitle || t.about.subtitle}
+            {t.about.subtitle}
           </p>
         </div>
 
@@ -44,7 +44,7 @@ export default function AboutSection() {
                 <div className="w-10 h-10 rounded-xl bg-emerald-950 border border-emerald-500/30 flex items-center justify-center">
                   <ShieldCheck className="w-5 h-5 text-emerald-400" />
                 </div>
-                История Клуба
+                {t.about.historyTitle}
               </h3>
             </div>
 
@@ -52,11 +52,7 @@ export default function AboutSection() {
               {/* Vertical Line on the left */}
               <div className="absolute left-4 top-2 bottom-0 w-0.5 bg-neutral-800"></div>
               
-              {[
-                { year: '2022', title: 'Основание', desc: 'Открытие первых групп для детей 6-8 лет. Формирование тренерского штаба.' },
-                { year: '2023', title: 'Первые турниры', desc: 'Участие в городских соревнованиях. Открытие групп для всех возрастов до 12 лет.' },
-                { year: '2024', title: 'Филиалы и Кубки', desc: 'Победа в Зимнем Кубке. Открытие 3 новых локаций. Запуск юношеской команды U-16.' },
-              ].map((item, i) => (
+              {(t.about.historyTimeline || []).map((item, i) => (
                 <motion.div 
                   key={item.year}
                   initial={{ opacity: 0, x: -20 }}
@@ -85,7 +81,7 @@ export default function AboutSection() {
                 <div className="w-10 h-10 rounded-xl bg-emerald-950 border border-emerald-500/30 flex items-center justify-center">
                   <Target className="w-5 h-5 text-emerald-400" />
                 </div>
-                Наши Ценности
+                {t.about.missionTitle}
               </h3>
             </div>
 
@@ -101,17 +97,11 @@ export default function AboutSection() {
               
               <div className="relative z-10">
                 <p className="text-gray-300 leading-relaxed font-light mb-8 text-lg">
-                  {siteSettings.missionText || t.about.missionText}
+                  {t.about.missionText}
                 </p>
 
                 <div className="space-y-4">
-                  {[
-                    "Профессиональный рост в футболе",
-                    "Развитие лидерских качеств",
-                    "Дисциплина и командный дух",
-                    "Интеграция в новую среду",
-                    "Взаимное уважение"
-                  ].map((val, idx) => (
+                  {(t.about.missionPoints || []).map((val, idx) => (
                     <motion.div 
                       key={idx}
                       initial={{ opacity: 0, y: 10 }}
