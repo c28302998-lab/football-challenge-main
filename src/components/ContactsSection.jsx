@@ -108,12 +108,30 @@ export default function ContactsSection() {
 
           </div>
 
-          {/* Interactive Google Map Embed */}
-          <div className="lg:col-span-2 glass-panel rounded-3xl overflow-hidden border border-neutral-800 relative h-96 lg:h-auto min-h-[400px]">
+          {/* Interactive Google Map Embed - Neon Styled */}
+          <div className="lg:col-span-2 glass-panel rounded-3xl overflow-hidden border border-neutral-800 relative h-96 lg:h-auto min-h-[400px] group">
+            {/* Overlay to block full interaction if desired, but we let them scroll */}
+            <div className="absolute inset-0 pointer-events-none border-[4px] border-neutral-900/50 rounded-3xl z-20"></div>
+            
+            {/* Floating glowing radar pin */}
+            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10 pointer-events-none">
+              <div className="relative flex items-center justify-center">
+                <div className="w-6 h-6 bg-emerald-500 rounded-full z-10 shadow-[0_0_20px_rgba(16,185,129,1)]"></div>
+                <div className="w-16 h-16 bg-emerald-500/30 rounded-full absolute animate-ping"></div>
+                <div className="w-24 h-24 bg-emerald-500/10 rounded-full absolute animate-pulse"></div>
+                
+                {/* Popup label */}
+                <div className="absolute -top-12 bg-neutral-950 text-white text-xs font-bold px-3 py-1.5 rounded-lg border border-emerald-500/30 shadow-xl whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  FC Challenge Base
+                </div>
+              </div>
+            </div>
+
             <iframe
               title="Football Challenge Map Location"
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d156388.3543883017!2d20.921112449999998!3d52.2330653!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x471bcc51a16fe4d0%3A0x2f90119f187a5369!2sWarsaw%2C%20Poland!5e0!3m2!1sen!2s!4v1700000000000!5m2!1sen!2s"
-              className="w-full h-full border-0 filter brightness-90 contrast-125 saturate-50"
+              className="w-full h-full border-0 transition-all duration-700"
+              style={{ filter: "invert(100%) hue-rotate(180deg) brightness(1.1) contrast(1.3) sepia(10%)" }}
               allowFullScreen=""
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"

@@ -15,6 +15,7 @@ import Footer from './components/Footer';
 import { TrialModal, SponsorModal } from './components/TrialModal';
 import { VideoModal, PhotoModal, ArticleModal } from './components/MediaModals';
 import AnimatedSection from './components/AnimatedSection';
+import Preloader from './components/Preloader';
 
 function AppContent() {
   const { themeSettings } = useApp();
@@ -28,6 +29,9 @@ function AppContent() {
            '--color-emerald-600': primaryColor,
            '--color-emerald-900': primaryColor + '40'
          }}>
+      {/* Preloader */}
+      <Preloader />
+
       {/* Navigation Bar */}
       <Navbar />
 
