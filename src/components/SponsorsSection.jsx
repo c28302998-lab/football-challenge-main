@@ -1,5 +1,6 @@
 import React from 'react';
 import { useApp } from '../context/AppContext';
+import { motion } from 'framer-motion';
 import { Handshake, CheckCircle2, TrendingUp, Tv, Award, ArrowRight } from 'lucide-react';
 
 export default function SponsorsSection() {
@@ -110,18 +111,35 @@ export default function SponsorsSection() {
           </div>
         </div>
 
-        {/* Current Partners Logos */}
-        <div className="text-center">
-          <span className="text-xs font-bold uppercase tracking-widest text-gray-400">
+        {/* Current Partners Logos - Animated Marquee */}
+        <div className="text-center w-full mt-12 overflow-hidden">
+          <span className="text-xs font-bold uppercase tracking-widest text-gray-400 block mb-6">
             Официальные спонсоры
           </span>
-          <div className="mt-6 flex flex-wrap justify-center items-center gap-8">
-            {partners.map(p => (
-              <div key={p.id} className="flex items-center gap-3 bg-neutral-950 px-6 py-3 rounded-2xl border border-neutral-800 hover:border-emerald-500/40 transition-all">
-                <img src={p.logo} alt={p.name} className="w-8 h-8 rounded-lg object-cover" />
-                <span className="text-sm font-bold text-white">{p.name}</span>
-              </div>
-            ))}
+          
+          {/* Marquee Wrapper */}
+          <div className="relative w-full flex overflow-hidden group">
+            {/* Left/Right Fade Gradients */}
+            <div className="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-neutral-900/60 to-transparent z-10 pointer-events-none"></div>
+            <div className="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-neutral-900/60 to-transparent z-10 pointer-events-none"></div>
+
+            <motion.div 
+              className="flex gap-8 whitespace-nowrap min-w-max"
+              animate={{ x: ["0%", "-50%"] }}
+              transition={{
+                duration: 20,
+                ease: "linear",
+                repeat: Infinity,
+              }}
+            >
+              {/* Double the list for seamless loop */}
+              {[...partners, ...partners].map((p, idx) => (
+                <div key={`${p.id}-${idx}`} className="flex items-center gap-3 bg-neutral-950 px-6 py-3 rounded-2xl border border-neutral-800 hover:border-emerald-500/40 transition-all shrink-0">
+                  <img src={p.logo} alt={p.name} className="w-8 h-8 rounded-lg object-cover" />
+                  <span className="text-sm font-bold text-white">{p.name}</span>
+                </div>
+              ))}
+            </motion.div>
           </div>
         </div>
 
