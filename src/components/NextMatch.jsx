@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useApp } from '../context/AppContext';
 import { MapPin, Calendar, Clock } from 'lucide-react';
 import { motion } from 'framer-motion';
+import logoImg from '../assets/logo_transparent.png';
 
 export default function NextMatch() {
   const { t } = useApp();
@@ -58,7 +59,7 @@ export default function NextMatch() {
             {/* Team 1 */}
             <div className="flex flex-col items-center flex-1">
               <div className="w-24 h-24 sm:w-32 sm:h-32 bg-neutral-950 border border-emerald-500/30 rounded-full flex items-center justify-center mb-4 p-4 shadow-lg shadow-emerald-900/20">
-                <img src="/logo.png" alt="FC Challenge" className="w-full h-full object-contain" />
+                <img src={logoImg} alt="FC Challenge" className="w-full h-full object-contain" />
               </div>
               <h4 className="text-xl sm:text-2xl font-black text-white uppercase text-center">FC Challenge</h4>
             </div>
@@ -85,8 +86,8 @@ export default function NextMatch() {
 
             {/* Team 2 */}
             <div className="flex flex-col items-center flex-1">
-              <div className="w-24 h-24 sm:w-32 sm:h-32 bg-white rounded-full flex items-center justify-center mb-4 p-4 shadow-lg">
-                <img src="https://upload.wikimedia.org/wikipedia/en/thumb/a/a1/Legia_Warszawa_logo.svg/1200px-Legia_Warszawa_logo.svg.png" alt="Legia" className="w-full h-full object-contain" />
+              <div className="w-24 h-24 sm:w-32 sm:h-32 bg-white border border-neutral-200 rounded-full flex items-center justify-center mb-4 p-1 shadow-lg overflow-hidden">
+                <img src="https://ui-avatars.com/api/?name=Legia+Warszawa&background=fff&color=000&size=300&font-size=0.33" alt="Legia" className="w-full h-full object-cover rounded-full" />
               </div>
               <h4 className="text-xl sm:text-2xl font-black text-white uppercase text-center">Legia Warszawa</h4>
             </div>
