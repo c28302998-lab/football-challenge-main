@@ -2,6 +2,13 @@ export const translations = {
   ru: {
     navTitle: "Навигация",
     contactsTitle: "Контакты",
+    nextMatch: {
+      title: "Ближайший матч",
+      league: "Зимний Кубок г. Варшавы • Тур 5",
+      days: "Дней",
+      hours: "Часов",
+      minutes: "Минут"
+    },
     nav: {
       about: "О клубе",
       teams: "Команды",
@@ -219,6 +226,13 @@ export const translations = {
   uk: {
     navTitle: "Навігація",
     contactsTitle: "Контакти",
+    nextMatch: {
+      title: "Найближчий матч",
+      league: "Зимовий Кубок м. Варшави • Тур 5",
+      days: "Днів",
+      hours: "Годин",
+      minutes: "Хвилин"
+    },
     nav: {
       about: "Про клуб",
       teams: "Команди",
@@ -436,6 +450,13 @@ export const translations = {
   pl: {
     navTitle: "Nawigacja",
     contactsTitle: "Kontakt",
+    nextMatch: {
+      title: "Najbliższy mecz",
+      league: "Puchar Zimowy Warszawy • Kolejka 5",
+      days: "Dni",
+      hours: "Godzin",
+      minutes: "Minut"
+    },
     nav: {
       about: "O klubie",
       teams: "Drużyny",
@@ -653,6 +674,13 @@ export const translations = {
   en: {
     navTitle: "Navigation",
     contactsTitle: "Contacts",
+    nextMatch: {
+      title: "Next Match",
+      league: "Warsaw Winter Cup • Round 5",
+      days: "Days",
+      hours: "Hours",
+      minutes: "Minutes"
+    },
     nav: {
       about: "About Club",
       teams: "Teams",
