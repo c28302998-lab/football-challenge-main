@@ -13,6 +13,7 @@ import ContactsSection from './components/ContactsSection';
 import Footer from './components/Footer';
 import { TrialModal, SponsorModal } from './components/TrialModal';
 import { VideoModal, PhotoModal, ArticleModal } from './components/MediaModals';
+import AnimatedSection from './components/AnimatedSection';
 
 function AppContent() {
   const { themeSettings } = useApp();
@@ -31,15 +32,15 @@ function AppContent() {
 
         {/* Main Content Sections */}
         <main>
-          <Hero />
-          <AboutSection />
-          <TeamsSection />
-          <NewsSection />
-          <TournamentsSection />
-          <MediaSection />
-          <SponsorsSection />
-          <AcademySection />
-          <ContactsSection />
+          <AnimatedSection><Hero /></AnimatedSection>
+          <AnimatedSection><AboutSection /></AnimatedSection>
+          <AnimatedSection><TeamsSection /></AnimatedSection>
+          <AnimatedSection><NewsSection /></AnimatedSection>
+          <AnimatedSection><TournamentsSection /></AnimatedSection>
+          <AnimatedSection><MediaSection /></AnimatedSection>
+          <AnimatedSection><SponsorsSection /></AnimatedSection>
+          <AnimatedSection><AcademySection /></AnimatedSection>
+          <AnimatedSection><ContactsSection /></AnimatedSection>
         </main>
 
         {/* Footer */}
