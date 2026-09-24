@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useApp } from '../context/AppContext';
 import { Calendar, User, ArrowRight, Newspaper } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 export default function NewsSection() {
   const { t, news, setActiveArticle } = useApp();
@@ -54,9 +55,11 @@ export default function NewsSection() {
         {/* News Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {filteredNews.map((article) => (
-            <article 
+            <motion.article 
               key={article.id} 
-              className="glass-panel rounded-3xl overflow-hidden border border-neutral-800 hover:border-emerald-500/40 transition-all flex flex-col group cursor-pointer"
+              whileHover={{ y: -8, boxShadow: "0 20px 40px -15px rgba(16,185,129,0.2)" }}
+              transition={{ type: "spring", stiffness: 300, damping: 20 }}
+              className="glass-panel rounded-3xl overflow-hidden border border-neutral-800 hover:border-emerald-500/40 transition-colors flex flex-col group cursor-pointer"
               onClick={() => setActiveArticle(article)}
             >
               <div className="relative h-56 overflow-hidden">
@@ -98,7 +101,7 @@ export default function NewsSection() {
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </div>
               </div>
-            </article>
+            </motion.article>
           ))}
         </div>
 
