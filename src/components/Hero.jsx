@@ -1,8 +1,38 @@
-import React from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import Logo from './Logo';
 import { useApp } from '../context/AppContext';
 import { Trophy, Users, Award, Star, ArrowRight, CheckCircle } from 'lucide-react';
-import { motion } from 'framer-motion';
+import { motion, useInView } from 'framer-motion';
+
+const AnimatedNumber = ({ value, duration = 2, suffix = "" }) => {
+  const [displayValue, setDisplayValue] = useState(0);
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: "-50px 0px" });
+
+  useEffect(() => {
+    if (isInView) {
+      let start = 0;
+      const end = parseInt(value, 10);
+      if (start === end) return;
+
+      const timer = setInterval(() => {
+        start += Math.ceil(end / (duration * 60)); // smooth increment
+        if (start > end) start = end;
+        setDisplayValue(start);
+        if (start === end) clearInterval(timer);
+      }, 1000 / 60);
+
+      return () => clearInterval(timer);
+    }
+  }, [isInView, value, duration]);
+
+  return (
+    <span ref={ref} className="tabular-nums">
+      {displayValue}
+      {suffix}
+    </span>
+  );
+};
 
 export default function Hero() {
   const { t, setIsTrialModalOpen, siteSettings } = useApp();
@@ -98,27 +128,35 @@ export default function Hero() {
 
         {/* Stats Grid */}
         <motion.div variants={itemVariants} className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 w-full max-w-4xl">
-          <motion.div whileHover={{ y: -5, borderColor: "rgba(16, 185, 129, 0.4)" }} className="glass-panel p-5 rounded-2xl border border-neutral-800/80 text-center transition-colors">
+          <motion.div whileHover={{ y: -5, borderColor: "rgba(16, 185, 129, 0.4)" }} className="glass-panel p-5 rounded-2xl border border-neutral-800/80 text-center transition-colors group">
             <Users className="w-6 h-6 text-emerald-400 mx-auto mb-2" />
-            <div className="text-2xl sm:text-3xl font-black text-white font-mono">250+</div>
+            <div className="text-2xl sm:text-3xl font-black text-white font-mono group-hover:text-emerald-300 transition-colors">
+              <AnimatedNumber value={250} suffix="+" />
+            </div>
             <div className="text-xs text-gray-400 uppercase font-medium mt-1">{t.hero.statPlayers}</div>
           </motion.div>
 
-          <motion.div whileHover={{ y: -5, borderColor: "rgba(16, 185, 129, 0.4)" }} className="glass-panel p-5 rounded-2xl border border-neutral-800/80 text-center transition-colors">
+          <motion.div whileHover={{ y: -5, borderColor: "rgba(16, 185, 129, 0.4)" }} className="glass-panel p-5 rounded-2xl border border-neutral-800/80 text-center transition-colors group">
             <Trophy className="w-6 h-6 text-emerald-400 mx-auto mb-2" />
-            <div className="text-2xl sm:text-3xl font-black text-white font-mono">42</div>
+            <div className="text-2xl sm:text-3xl font-black text-white font-mono group-hover:text-emerald-300 transition-colors">
+              <AnimatedNumber value={42} />
+            </div>
             <div className="text-xs text-gray-400 uppercase font-medium mt-1">{t.hero.statTrophies}</div>
           </motion.div>
 
-          <motion.div whileHover={{ y: -5, borderColor: "rgba(16, 185, 129, 0.4)" }} className="glass-panel p-5 rounded-2xl border border-neutral-800/80 text-center transition-colors">
+          <motion.div whileHover={{ y: -5, borderColor: "rgba(16, 185, 129, 0.4)" }} className="glass-panel p-5 rounded-2xl border border-neutral-800/80 text-center transition-colors group">
             <Award className="w-6 h-6 text-emerald-400 mx-auto mb-2" />
-            <div className="text-2xl sm:text-3xl font-black text-white font-mono">8</div>
+            <div className="text-2xl sm:text-3xl font-black text-white font-mono group-hover:text-emerald-300 transition-colors">
+              <AnimatedNumber value={8} />
+            </div>
             <div className="text-xs text-gray-400 uppercase font-medium mt-1">{t.hero.statLicensedCoaches}</div>
           </motion.div>
 
-          <motion.div whileHover={{ y: -5, borderColor: "rgba(16, 185, 129, 0.4)" }} className="glass-panel p-5 rounded-2xl border border-neutral-800/80 text-center transition-colors">
+          <motion.div whileHover={{ y: -5, borderColor: "rgba(16, 185, 129, 0.4)" }} className="glass-panel p-5 rounded-2xl border border-neutral-800/80 text-center transition-colors group">
             <CheckCircle className="w-6 h-6 text-emerald-400 mx-auto mb-2" />
-            <div className="text-2xl sm:text-3xl font-black text-white font-mono">18</div>
+            <div className="text-2xl sm:text-3xl font-black text-white font-mono group-hover:text-emerald-300 transition-colors">
+              <AnimatedNumber value={18} />
+            </div>
             <div className="text-xs text-gray-400 uppercase font-medium mt-1">{t.hero.statProContracts}</div>
           </motion.div>
         </motion.div>

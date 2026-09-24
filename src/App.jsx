@@ -4,7 +4,6 @@ import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import NextMatch from './components/NextMatch';
 import AboutSection from './components/AboutSection';
-import StatsSection from './components/StatsSection';
 import TeamsSection from './components/TeamsSection';
 import NewsSection from './components/NewsSection';
 import TournamentsSection from './components/TournamentsSection';
@@ -41,7 +40,6 @@ function AppContent() {
           <AnimatedSection><Hero /></AnimatedSection>
           <AnimatedSection><NextMatch /></AnimatedSection>
           <AnimatedSection><AboutSection /></AnimatedSection>
-          <AnimatedSection><StatsSection /></AnimatedSection>
           <AnimatedSection><TeamsSection /></AnimatedSection>
           <AnimatedSection><NewsSection /></AnimatedSection>
           <AnimatedSection><TournamentsSection /></AnimatedSection>
