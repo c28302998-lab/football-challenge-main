@@ -34,94 +34,101 @@ export default function AboutSection() {
           </p>
         </div>
 
-        {/* History & Mission Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-20">
+        {/* Content Layout: Timeline on Left, Values on Right */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 mb-20">
           
-          <motion.div 
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, amount: 0.3 }}
-            transition={{ duration: 0.6, ease: "easeOut" }}
-            className="glass-panel p-8 rounded-3xl border border-neutral-800 hover:border-emerald-500/40 transition-all group"
-          >
-            <div className="w-14 h-14 rounded-2xl bg-emerald-950 border border-emerald-500/30 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-              <ShieldCheck className="w-7 h-7 text-emerald-400" />
+          {/* Left Column: Timeline */}
+          <div>
+            <div className="mb-10">
+              <h3 className="text-2xl sm:text-3xl font-black text-white uppercase flex items-center gap-3">
+                <div className="w-10 h-10 rounded-xl bg-emerald-950 border border-emerald-500/30 flex items-center justify-center">
+                  <ShieldCheck className="w-5 h-5 text-emerald-400" />
+                </div>
+                История Клуба
+              </h3>
             </div>
-            <h3 className="text-2xl font-bold text-white uppercase mb-4">
-              {siteSettings.historyTitle || t.about.historyTitle}
-            </h3>
-            <p className="text-gray-300 leading-relaxed font-light whitespace-pre-wrap">
-              {(() => {
-                let text = siteSettings.historyText || t.about.historyText;
-                if (text && text.includes('Legia')) {
-                  text = text.replace(/ Legia Warszawa.*/i, '.').replace('..', '.');
-                }
-                return text;
-              })()}
-            </p>
-          </motion.div>
 
-          <motion.div 
-            initial={{ opacity: 0, x: 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, amount: 0.3 }}
-            transition={{ duration: 0.6, ease: "easeOut", delay: 0.2 }}
-            className="glass-panel p-8 rounded-3xl border border-neutral-800 hover:border-emerald-500/40 transition-all group"
-          >
-            <div className="w-14 h-14 rounded-2xl bg-emerald-950 border border-emerald-500/30 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-              <Target className="w-7 h-7 text-emerald-400" />
-            </div>
-            <h3 className="text-2xl font-bold text-white uppercase mb-4">
-              {siteSettings.missionTitle || t.about.missionTitle}
-            </h3>
-            <p className="text-gray-300 leading-relaxed font-light whitespace-pre-wrap">
-              {siteSettings.missionText || t.about.missionText}
-            </p>
-          </motion.div>
-
-        </div>
-
-        {/* Timeline Section */}
-        <div className="mb-20">
-          <div className="text-center mb-12">
-            <h3 className="text-2xl sm:text-3xl font-black text-white uppercase">
-              История развития клуба
-            </h3>
-            <p className="text-gray-400 mt-2">Ключевые этапы и достижения нашей академии</p>
-          </div>
-
-          <div className="relative max-w-3xl mx-auto">
-            {/* Vertical Line */}
-            <div className="absolute left-4 sm:left-1/2 top-0 bottom-0 w-0.5 bg-neutral-800 transform sm:-translate-x-1/2"></div>
-            
-            {[
-              { year: '2022', title: 'Основание', desc: 'Открытие первых групп для детей 6-8 лет. Формирование тренерского штаба.' },
-              { year: '2023', title: 'Первые турниры', desc: 'Участие в городских соревнованиях. Открытие групп для всех возрастов до 12 лет.' },
-              { year: '2024', title: 'Филиалы и Кубки', desc: 'Победа в Зимнем Кубке. Открытие 3 новых локаций. Запуск юношеской команды U-16.' },
-            ].map((item, i) => (
-              <motion.div 
-                key={item.year}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.5 }}
-                transition={{ duration: 0.5, delay: i * 0.2 }}
-                className={`relative flex flex-col sm:flex-row items-center justify-between mb-12 last:mb-0 ${i % 2 === 0 ? 'sm:flex-row-reverse' : ''}`}
-              >
-                {/* Dot */}
-                <div className="absolute left-4 sm:left-1/2 w-4 h-4 rounded-full bg-emerald-500 ring-4 ring-neutral-950 transform -translate-x-1/2 sm:-translate-x-1/2 z-10 shadow-[0_0_10px_rgba(16,185,129,0.5)]"></div>
-                
-                <div className="w-full sm:w-1/2 pl-12 sm:pl-0 sm:px-8">
-                  <div className={`glass-panel p-6 rounded-2xl border border-neutral-800 hover:border-emerald-500/40 transition-colors ${i % 2 === 0 ? 'sm:text-left' : 'sm:text-right'}`}>
+            <div className="relative">
+              {/* Vertical Line on the left */}
+              <div className="absolute left-4 top-2 bottom-0 w-0.5 bg-neutral-800"></div>
+              
+              {[
+                { year: '2022', title: 'Основание', desc: 'Открытие первых групп для детей 6-8 лет. Формирование тренерского штаба.' },
+                { year: '2023', title: 'Первые турниры', desc: 'Участие в городских соревнованиях. Открытие групп для всех возрастов до 12 лет.' },
+                { year: '2024', title: 'Филиалы и Кубки', desc: 'Победа в Зимнем Кубке. Открытие 3 новых локаций. Запуск юношеской команды U-16.' },
+              ].map((item, i) => (
+                <motion.div 
+                  key={item.year}
+                  initial={{ opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true, amount: 0.5 }}
+                  transition={{ duration: 0.5, delay: i * 0.2 }}
+                  className="relative flex flex-col mb-10 last:mb-0 pl-12"
+                >
+                  {/* Dot */}
+                  <div className="absolute left-4 w-4 h-4 rounded-full bg-emerald-500 ring-4 ring-neutral-950 transform -translate-x-1/2 top-1.5 z-10 shadow-[0_0_10px_rgba(16,185,129,0.5)]"></div>
+                  
+                  <div className="glass-panel p-6 rounded-2xl border border-neutral-800 hover:border-emerald-500/40 transition-colors">
                     <div className="text-emerald-400 font-black font-mono text-xl mb-1">{item.year}</div>
                     <h4 className="text-lg font-bold text-white mb-2">{item.title}</h4>
                     <p className="text-sm text-gray-400">{item.desc}</p>
                   </div>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+
+          {/* Right Column: Mission and Values */}
+          <div>
+            <div className="mb-10">
+              <h3 className="text-2xl sm:text-3xl font-black text-white uppercase flex items-center gap-3">
+                <div className="w-10 h-10 rounded-xl bg-emerald-950 border border-emerald-500/30 flex items-center justify-center">
+                  <Target className="w-5 h-5 text-emerald-400" />
                 </div>
-                
-                {/* Empty spacer for the other side */}
-                <div className="hidden sm:block sm:w-1/2"></div>
-              </motion.div>
-            ))}
+                Наши Ценности
+              </h3>
+            </div>
+
+            <motion.div 
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 0.6 }}
+              className="glass-panel p-8 sm:p-10 rounded-3xl border border-neutral-800 relative overflow-hidden group"
+            >
+              {/* Decorative accent */}
+              <div className="absolute -right-10 -top-10 w-40 h-40 bg-emerald-500/10 rounded-full blur-2xl group-hover:bg-emerald-500/20 transition-colors duration-500"></div>
+              
+              <div className="relative z-10">
+                <p className="text-gray-300 leading-relaxed font-light mb-8 text-lg">
+                  {siteSettings.missionText || t.about.missionText}
+                </p>
+
+                <div className="space-y-4">
+                  {[
+                    "Профессиональный рост в футболе",
+                    "Развитие лидерских качеств",
+                    "Дисциплина и командный дух",
+                    "Интеграция в новую среду",
+                    "Взаимное уважение"
+                  ].map((val, idx) => (
+                    <motion.div 
+                      key={idx}
+                      initial={{ opacity: 0, y: 10 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ delay: 0.3 + (idx * 0.1) }}
+                      className="flex items-center gap-4 bg-neutral-900/50 p-4 rounded-xl border border-neutral-800/50"
+                    >
+                      <div className="w-8 h-8 rounded-full bg-emerald-500/10 flex items-center justify-center flex-shrink-0">
+                        <CheckCircle2 className="w-5 h-5 text-emerald-400" />
+                      </div>
+                      <span className="text-white font-medium">{val}</span>
+                    </motion.div>
+                  ))}
+                </div>
+              </div>
+            </motion.div>
           </div>
         </div>
 

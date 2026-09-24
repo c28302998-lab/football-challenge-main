@@ -37,7 +37,7 @@ export default function NextMatch() {
   }, [matchDate]);
 
   return (
-    <section className="relative -mt-16 z-20 pb-16">
+    <section className="relative mt-8 mb-16 z-20">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div 
           initial={{ opacity: 0, y: 30 }}
