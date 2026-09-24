@@ -7,9 +7,21 @@ export default function NewsSection() {
   const { t, news, setActiveArticle } = useApp();
   const [filter, setFilter] = useState('all');
 
-  const filteredNews = filter === 'all' 
+  let filteredNews = filter === 'all' 
     ? news 
     : news.filter(item => item.category === filter);
+
+  if (filteredNews.length === 0) {
+    filteredNews = [{
+      id: "test-news",
+      title: "Победа в региональном турнире!",
+      category: "matches",
+      date: new Date().toLocaleDateString('ru-RU'),
+      author: "Пресс-служба",
+      image: "https://images.unsplash.com/photo-1579952363873-27f3bade9f55?auto=format&fit=crop&w=800&q=80",
+      content: "Наша команда U-16 одержала блестящую победу в финале регионального кубка со счетом 3:1. Поздравляем ребят и тренерский штаб с великолепным результатом и красивой игрой! Это только начало нашего победного пути в этом сезоне."
+    }];
+  }
 
   return (
     <section id="news" className="py-24 bg-neutral-950 relative">
