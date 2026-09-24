@@ -49,9 +49,10 @@ export default function Navbar() {
             <a
               key={link.href}
               href={link.href}
-              className="text-xs font-semibold uppercase tracking-wider text-gray-300 hover:text-emerald-400 transition-colors py-1"
+              className="relative text-[11px] font-bold uppercase tracking-[0.15em] text-gray-400 hover:text-white transition-colors py-2 group"
             >
               {link.label}
+              <span className="absolute bottom-0 left-1/2 w-0 h-[2px] bg-emerald-500 transform -translate-x-1/2 group-hover:w-full transition-all duration-300 ease-out shadow-[0_0_8px_rgba(16,185,129,0.8)] rounded-full"></span>
             </a>
           ))}
         </nav>
