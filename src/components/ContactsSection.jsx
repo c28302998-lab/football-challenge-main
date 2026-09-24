@@ -125,12 +125,21 @@ export default function ContactsSection() {
             <iframe
               title="Football Challenge Map Location"
               src={`https://maps.google.com/maps?q=${encodeURIComponent(siteSettings?.contactAddress || t.contacts.addressText)}&t=&z=14&ie=UTF8&iwloc=&output=embed`}
-              className="w-full h-full border-0 transition-all duration-700"
+              className="w-full h-full border-0 transition-all duration-700 pointer-events-none"
               style={{ filter: "invert(100%) hue-rotate(180deg) brightness(1.1) contrast(1.3) sepia(10%)" }}
               allowFullScreen=""
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
             ></iframe>
+            
+            {/* Custom Green Marker / Pulse */}
+            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 pointer-events-none flex items-center justify-center">
+              <div className="absolute w-16 h-16 bg-emerald-500/20 rounded-full animate-ping"></div>
+              <div className="absolute w-24 h-24 bg-emerald-500/10 rounded-full animate-pulse delay-75"></div>
+              <div className="relative w-6 h-6 bg-emerald-500 rounded-full border-2 border-neutral-900 shadow-[0_0_15px_rgba(16,185,129,0.5)] z-10 flex items-center justify-center">
+                <div className="w-2 h-2 bg-neutral-900 rounded-full"></div>
+              </div>
+            </div>
           </div>
 
         </div>
