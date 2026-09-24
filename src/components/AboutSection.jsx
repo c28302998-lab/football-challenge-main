@@ -7,6 +7,20 @@ export default function AboutSection() {
   const { t, coaches, partners, siteSettings } = useApp();
   const aboutImage = siteSettings?.aboutImage || "https://images.unsplash.com/photo-1574629810360-7efbb19255cb?auto=format&fit=crop&w=1920&q=80";
 
+  const historyLines = siteSettings?.historyText?.split('\n').filter(l => l.trim()) || [];
+  const dynamicHistory = historyLines.map(line => {
+    const parts = line.split('-');
+    return {
+      year: parts[0]?.trim() || '',
+      title: parts[1]?.trim() || '',
+      desc: parts.slice(2).join('-').trim() || ''
+    };
+  }).filter(h => h.year && h.title);
+  const finalHistory = dynamicHistory.length > 0 ? dynamicHistory : (t.about.historyTimeline || []);
+
+  const missionLines = siteSettings?.missionText?.split('\n').filter(l => l.trim()) || [];
+  const finalMission = missionLines.length > 0 ? missionLines : (t.about.missionPoints || []);
+
   return (
     <section id="about" className="py-24 bg-neutral-950 relative overflow-hidden">
       
@@ -53,9 +67,9 @@ export default function AboutSection() {
               {/* Vertical Line on the left */}
               <div className="absolute left-4 top-2 bottom-0 w-0.5 bg-neutral-800"></div>
               
-              {(t.about.historyTimeline || []).map((item, i) => (
+              {finalHistory.map((item, i) => (
                 <motion.div 
-                  key={item.year}
+                  key={i}
                   initial={{ opacity: 0, x: -20 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true, amount: 0.5 }}
@@ -102,7 +116,7 @@ export default function AboutSection() {
                 </p>
 
                 <div className="space-y-4">
-                  {(t.about.missionPoints || []).map((val, idx) => (
+                  {finalMission.map((val, idx) => (
                     <motion.div 
                       key={idx}
                       initial={{ opacity: 0, y: 10 }}

@@ -5,10 +5,14 @@ import { motion } from 'framer-motion';
 import logoImg from '../assets/logo_transparent.png';
 
 export default function NextMatch() {
-  const { t } = useApp();
+  const { t, siteSettings } = useApp();
 
   // Simple countdown logic
   const [matchDate] = useState(() => {
+    if (siteSettings?.nextMatchDate) {
+      const parsed = new Date(siteSettings.nextMatchDate);
+      if (!isNaN(parsed)) return parsed;
+    }
     const d = new Date();
     d.setDate(d.getDate() + 3); // Fake match in 3 days
     d.setHours(15, 0, 0, 0);
@@ -51,7 +55,7 @@ export default function NextMatch() {
           
           <div className="text-center mb-6">
             <h3 className="text-emerald-400 text-xs font-bold uppercase tracking-widest mb-1">{t.nextMatch?.title || 'Ближайший матч'}</h3>
-            <p className="text-gray-400 text-sm">{t.nextMatch?.league || 'Зимний Кубок г. Варшавы • Тур 5'}</p>
+            <p className="text-gray-400 text-sm">{siteSettings?.nextMatchLeague || t.nextMatch?.league || 'Зимний Кубок г. Варшавы • Тур 5'}</p>
           </div>
 
           <div className="flex flex-col md:flex-row items-center justify-between gap-8 md:gap-4">
@@ -59,9 +63,9 @@ export default function NextMatch() {
             {/* Team 1 */}
             <div className="flex flex-col items-center flex-1">
               <div className="w-24 h-24 sm:w-32 sm:h-32 bg-neutral-950 border border-emerald-500/30 rounded-full flex items-center justify-center mb-4 p-4 shadow-lg shadow-emerald-900/20">
-                <img src={logoImg} alt="FC Challenge" className="w-full h-full object-contain" />
+                <img src={siteSettings?.nextMatchTeam1Logo || logoImg} alt="Team 1" className="w-full h-full object-contain" />
               </div>
-              <h4 className="text-xl sm:text-2xl font-black text-white uppercase text-center">FC Challenge</h4>
+              <h4 className="text-xl sm:text-2xl font-black text-white uppercase text-center">{siteSettings?.nextMatchTeam1 || 'FC Challenge'}</h4>
             </div>
 
             {/* VS & Timer */}
@@ -87,9 +91,9 @@ export default function NextMatch() {
             {/* Team 2 */}
             <div className="flex flex-col items-center flex-1">
               <div className="w-24 h-24 sm:w-32 sm:h-32 bg-white border border-neutral-200 rounded-full flex items-center justify-center mb-4 p-1 shadow-lg overflow-hidden">
-                <img src="https://ui-avatars.com/api/?name=Legia+Warszawa&background=fff&color=000&size=300&font-size=0.33" alt="Legia" className="w-full h-full object-cover rounded-full" />
+                <img src={siteSettings?.nextMatchTeam2Logo || "https://ui-avatars.com/api/?name=Legia+Warszawa&background=fff&color=000&size=300&font-size=0.33"} alt="Team 2" className="w-full h-full object-cover rounded-full" />
               </div>
-              <h4 className="text-xl sm:text-2xl font-black text-white uppercase text-center">Legia Warszawa</h4>
+              <h4 className="text-xl sm:text-2xl font-black text-white uppercase text-center">{siteSettings?.nextMatchTeam2 || 'Legia Warszawa'}</h4>
             </div>
 
           </div>
@@ -109,6 +113,28 @@ export default function NextMatch() {
             </div>
           </div>
         </motion.div>
+
+        {/* League Table / Standings Image */}
+        {siteSettings?.leagueTableImage && (
+          <motion.div 
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="mt-10 bg-neutral-900 border border-neutral-800 rounded-3xl p-6 sm:p-10 shadow-2xl overflow-hidden relative"
+          >
+            <div className="text-center mb-6">
+              <h3 className="text-emerald-400 text-xs font-bold uppercase tracking-widest mb-1">Турнирная Таблица</h3>
+              <p className="text-gray-400 text-sm">Актуальное положение команд</p>
+            </div>
+            <div className="w-full flex justify-center rounded-xl overflow-hidden border border-neutral-800 bg-neutral-950">
+              <img 
+                src={siteSettings.leagueTableImage} 
+                alt="Турнирная таблица" 
+                className="w-full max-w-4xl h-auto object-contain"
+              />
+            </div>
+          </motion.div>
+        )}
       </div>
     </section>
   );
