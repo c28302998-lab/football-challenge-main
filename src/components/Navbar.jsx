@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Logo from './Logo';
 import { useApp } from '../context/AppContext';
 import { Globe, Shield, Menu, X, UserCheck, Settings } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 export default function Navbar() {
   const { lang, setLang, t, setIsTrialModalOpen } = useApp();
@@ -79,13 +80,15 @@ export default function Navbar() {
 
 
           {/* Trial Registration CTA */}
-          <button
+          <motion.button
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
             onClick={() => setIsTrialModalOpen(true)}
-            className="flex items-center gap-2 px-4 py-2 text-xs font-bold uppercase tracking-wider text-white bg-emerald-600 hover:bg-emerald-500 rounded-lg shadow-lg shadow-emerald-900/30 hover:shadow-emerald-600/40 transition-all transform hover:-translate-y-0.5 cursor-pointer"
+            className="flex items-center gap-2 px-4 py-2 text-xs font-bold uppercase tracking-wider text-white bg-emerald-600 rounded-lg shadow-lg shadow-emerald-900/30 cursor-pointer"
           >
             <UserCheck className="w-4 h-4" />
             <span>{t.nav.joinTrial}</span>
-          </button>
+          </motion.button>
         </div>
 
         {/* Mobile Hamburger Toggle */}

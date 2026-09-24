@@ -24,7 +24,7 @@ export default function AnimatedSection({ children, className = "", delay = 0, d
     <motion.div
       initial="hidden"
       whileInView="visible"
-      viewport={{ once: true, amount: 0.1 }}
+      viewport={{ once: true, amount: 0.3 }}
       variants={variants}
       className={className}
     >
