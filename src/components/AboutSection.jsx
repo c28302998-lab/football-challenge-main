@@ -1,6 +1,6 @@
 import React from 'react';
 import { useApp } from '../context/AppContext';
-import { ShieldCheck, Target, Award, Users, ChevronRight } from 'lucide-react';
+import { ShieldCheck, Target, Award, Users, ChevronRight, CheckCircle2 } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 export default function AboutSection() {
@@ -79,6 +79,50 @@ export default function AboutSection() {
             </p>
           </motion.div>
 
+        </div>
+
+        {/* Timeline Section */}
+        <div className="mb-20">
+          <div className="text-center mb-12">
+            <h3 className="text-2xl sm:text-3xl font-black text-white uppercase">
+              История развития клуба
+            </h3>
+            <p className="text-gray-400 mt-2">Ключевые этапы и достижения нашей академии</p>
+          </div>
+
+          <div className="relative max-w-3xl mx-auto">
+            {/* Vertical Line */}
+            <div className="absolute left-4 sm:left-1/2 top-0 bottom-0 w-0.5 bg-neutral-800 transform sm:-translate-x-1/2"></div>
+            
+            {[
+              { year: '2022', title: 'Основание', desc: 'Открытие первых групп для детей 6-8 лет. Формирование тренерского штаба.' },
+              { year: '2023', title: 'Первые турниры', desc: 'Участие в городских соревнованиях. Открытие групп для всех возрастов до 12 лет.' },
+              { year: '2024', title: 'Филиалы и Кубки', desc: 'Победа в Зимнем Кубке. Открытие 3 новых локаций. Запуск юношеской команды U-16.' },
+            ].map((item, i) => (
+              <motion.div 
+                key={item.year}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.5 }}
+                transition={{ duration: 0.5, delay: i * 0.2 }}
+                className={`relative flex flex-col sm:flex-row items-center justify-between mb-12 last:mb-0 ${i % 2 === 0 ? 'sm:flex-row-reverse' : ''}`}
+              >
+                {/* Dot */}
+                <div className="absolute left-4 sm:left-1/2 w-4 h-4 rounded-full bg-emerald-500 ring-4 ring-neutral-950 transform -translate-x-1/2 sm:-translate-x-1/2 z-10 shadow-[0_0_10px_rgba(16,185,129,0.5)]"></div>
+                
+                <div className="w-full sm:w-1/2 pl-12 sm:pl-0 sm:px-8">
+                  <div className={`glass-panel p-6 rounded-2xl border border-neutral-800 hover:border-emerald-500/40 transition-colors ${i % 2 === 0 ? 'sm:text-left' : 'sm:text-right'}`}>
+                    <div className="text-emerald-400 font-black font-mono text-xl mb-1">{item.year}</div>
+                    <h4 className="text-lg font-bold text-white mb-2">{item.title}</h4>
+                    <p className="text-sm text-gray-400">{item.desc}</p>
+                  </div>
+                </div>
+                
+                {/* Empty spacer for the other side */}
+                <div className="hidden sm:block sm:w-1/2"></div>
+              </motion.div>
+            ))}
+          </div>
         </div>
 
         {/* Coaching Staff Section */}
