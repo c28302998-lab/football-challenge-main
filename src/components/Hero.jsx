@@ -75,6 +75,8 @@ export default function Hero() {
         {/* CTA Buttons Group */}
         <motion.div variants={itemVariants} className="mt-10 flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto">
           <motion.button
+            animate={{ scale: [1, 1.03, 1], boxShadow: ["0px 0px 0px rgba(16,185,129,0)", "0px 0px 25px rgba(16,185,129,0.6)", "0px 0px 0px rgba(16,185,129,0)"] }}
+            transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             onClick={() => setIsTrialModalOpen(true)}

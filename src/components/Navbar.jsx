@@ -81,6 +81,8 @@ export default function Navbar() {
 
           {/* Trial Registration CTA */}
           <motion.button
+            animate={{ boxShadow: ["0px 0px 0px rgba(16,185,129,0)", "0px 0px 15px rgba(16,185,129,0.5)", "0px 0px 0px rgba(16,185,129,0)"] }}
+            transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             onClick={() => setIsTrialModalOpen(true)}
