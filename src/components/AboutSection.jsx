@@ -190,44 +190,7 @@ export default function AboutSection() {
           </div>
         </div>
 
-        {/* Partners Infinite Marquee */}
-        <div className="pt-10 border-t border-neutral-900 overflow-hidden relative">
-          <div className="text-center mb-8">
-            <h4 className="text-sm font-bold uppercase tracking-widest text-gray-400">
-              {t.about.partnersTitle}
-            </h4>
-          </div>
 
-          <div className="relative flex overflow-hidden w-full group">
-            {/* Left and Right Gradients for smooth fade out */}
-            <div className="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-neutral-950 to-transparent z-10 pointer-events-none"></div>
-            <div className="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-neutral-950 to-transparent z-10 pointer-events-none"></div>
-
-            <motion.div 
-              className="flex gap-8 px-4 w-max"
-              animate={{ x: ["0%", "-50%"] }}
-              transition={{ repeat: Infinity, ease: "linear", duration: 20 }}
-            >
-              {/* Duplicate partners array multiple times to ensure seamless scrolling */}
-              {[...partners, ...partners, ...partners, ...partners, ...partners, ...partners].map((partner, index) => (
-                <div 
-                  key={`${partner.id}-${index}`}
-                  className="glass-panel p-4 rounded-xl border border-neutral-800 flex items-center gap-3 hover:border-emerald-500/40 transition-colors w-[250px] shrink-0"
-                >
-                  <img 
-                    src={partner.logo} 
-                    alt={partner.name} 
-                    className="w-10 h-10 rounded-lg object-cover filter grayscale hover:grayscale-0 transition-all"
-                  />
-                  <div className="text-left">
-                    <div className="text-sm font-bold text-white whitespace-nowrap overflow-hidden text-ellipsis">{partner.name}</div>
-                    <div className="text-[10px] text-emerald-400 uppercase tracking-wider">{partner.type}</div>
-                  </div>
-                </div>
-              ))}
-            </motion.div>
-          </div>
-        </div>
 
       </div>
     </section>
