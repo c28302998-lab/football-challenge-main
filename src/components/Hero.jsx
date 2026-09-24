@@ -11,18 +11,27 @@ const AnimatedNumber = ({ value, duration = 2, suffix = "" }) => {
 
   useEffect(() => {
     if (isInView) {
-      let start = 0;
+      let startTime;
       const end = parseInt(value, 10);
-      if (start === end) return;
+      if (end === 0) return;
 
-      const timer = setInterval(() => {
-        start += Math.ceil(end / (duration * 60)); // smooth increment
-        if (start > end) start = end;
-        setDisplayValue(start);
-        if (start === end) clearInterval(timer);
-      }, 1000 / 60);
+      // Easing function: easeOutQuart
+      const easeOutQuart = (x) => 1 - Math.pow(1 - x, 4);
 
-      return () => clearInterval(timer);
+      const step = (timestamp) => {
+        if (!startTime) startTime = timestamp;
+        const progress = (timestamp - startTime) / (duration * 1000);
+        
+        if (progress < 1) {
+          const current = Math.floor(end * easeOutQuart(progress));
+          setDisplayValue(current);
+          window.requestAnimationFrame(step);
+        } else {
+          setDisplayValue(end);
+        }
+      };
+      
+      window.requestAnimationFrame(step);
     }
   }, [isInView, value, duration]);
 

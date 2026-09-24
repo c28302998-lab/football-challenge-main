@@ -61,7 +61,7 @@ export function TrialModal() {
                 <UserCheck className="w-6 h-6 text-emerald-400" />
               </div>
               <h3 className="text-2xl font-black text-white uppercase">{t.academy.formTitle}</h3>
-              <p className="text-xs text-gray-400 mt-1">Football Challenge Academy</p>
+              <p className="text-xs text-gray-400 mt-1">{t.academy?.formSubtitle}</p>
             </div>
 
             {submitted ? (
@@ -78,7 +78,7 @@ export function TrialModal() {
                     value={formData.fullName}
                     onChange={(e) => setFormData({ ...formData, fullName: e.target.value })}
                     className="w-full bg-neutral-950 border border-neutral-800 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-emerald-500"
-                    placeholder="Имя Фамилия"
+                    placeholder={t.academy?.placeholderName}
                   />
                 </div>
 
@@ -90,10 +90,10 @@ export function TrialModal() {
                       onChange={(e) => setFormData({ ...formData, birthYear: e.target.value, preferredTeam: e.target.value })}
                       className="w-full bg-neutral-950 border border-neutral-800 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-emerald-500"
                     >
-                      <option value="2008">2008 (U-17)</option>
-                      <option value="2009">2009 (U-16)</option>
-                      <option value="2010">2010 (U-15)</option>
-                      <option value="2011">2011 (U-14)</option>
+                      <option value="2008">2008</option>
+                      <option value="2009">2009</option>
+                      <option value="2010">2010</option>
+                      <option value="2011">2011</option>
                     </select>
                   </div>
 
@@ -105,7 +105,7 @@ export function TrialModal() {
                       value={formData.parentName}
                       onChange={(e) => setFormData({ ...formData, parentName: e.target.value })}
                       className="w-full bg-neutral-950 border border-neutral-800 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-emerald-500"
-                      placeholder="Родитель"
+                      placeholder={t.academy?.placeholderParent}
                     />
                   </div>
                 </div>
@@ -204,42 +204,42 @@ export function SponsorModal() {
 
             <div className="text-center mb-6">
               <h3 className="text-2xl font-black text-white uppercase">{t.sponsors.cta}</h3>
-              <p className="text-xs text-gray-400 mt-1">Оставьте ваши контакты для обсуждения деталей</p>
+              <p className="text-xs text-gray-400 mt-1">Zostaw swoje dane kontaktowe, aby omówić szczegóły</p>
             </div>
 
             {submitted ? (
               <div className="bg-emerald-950 border border-emerald-500 p-6 rounded-2xl text-center text-emerald-300 text-sm font-semibold">
-                Спасибо за обращение! Наш менеджер по партнерству свяжется с вами.
+                Dziękujemy za kontakt! Nasz menedżer ds. partnerstwa skontaktuje się z Tobą.
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="space-y-4">
                 <div>
-                  <label className="block text-xs font-semibold text-gray-400 uppercase mb-1">Название компании</label>
+                  <label className="block text-xs font-semibold text-gray-400 uppercase mb-1">Nazwa firmy</label>
                   <input
                     type="text"
                     required
                     value={formData.companyName}
                     onChange={(e) => setFormData({ ...formData, companyName: e.target.value })}
                     className="w-full bg-neutral-950 border border-neutral-800 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-emerald-500"
-                    placeholder="ООО Компания"
+                    placeholder="Nazwa Twojej firmy"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-xs font-semibold text-gray-400 uppercase mb-1">Контактное лицо</label>
+                  <label className="block text-xs font-semibold text-gray-400 uppercase mb-1">Osoba kontaktowa</label>
                   <input
                     type="text"
                     required
                     value={formData.contactName}
                     onChange={(e) => setFormData({ ...formData, contactName: e.target.value })}
                     className="w-full bg-neutral-950 border border-neutral-800 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-emerald-500"
-                    placeholder="Имя Фамилия"
+                    placeholder="Imię i nazwisko"
                   />
                 </div>
 
                 <div className="grid grid-cols-2 gap-4">
                   <div>
-                    <label className="block text-xs font-semibold text-gray-400 uppercase mb-1">Телефон</label>
+                    <label className="block text-xs font-semibold text-gray-400 uppercase mb-1">Telefon</label>
                     <input
                       type="tel"
                       required
@@ -264,7 +264,7 @@ export function SponsorModal() {
                 </div>
 
                 <div>
-                  <label className="block text-xs font-semibold text-gray-400 uppercase mb-1">Пакет партнерства</label>
+                  <label className="block text-xs font-semibold text-gray-400 uppercase mb-1">Pakiet partnerski</label>
                   <select
                     value={formData.tier}
                     onChange={(e) => setFormData({ ...formData, tier: e.target.value })}
@@ -281,7 +281,7 @@ export function SponsorModal() {
                   type="submit"
                   className="w-full py-3.5 text-xs font-bold uppercase tracking-wider text-white bg-emerald-600 hover:bg-emerald-500 rounded-xl shadow-lg transition-all cursor-pointer mt-4"
                 >
-                  Отправить заявку
+                  Wyślij zapytanie
                 </button>
               </form>
             )}

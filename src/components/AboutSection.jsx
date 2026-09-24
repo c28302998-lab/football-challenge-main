@@ -29,6 +29,7 @@ export default function AboutSection() {
           <h2 className="text-3xl sm:text-5xl font-black text-white uppercase tracking-tight">
             {t.about.title}
           </h2>
+          <div className="w-12 h-1 bg-emerald-500 mx-auto mt-6 rounded-full"></div>
           <p className="mt-4 text-gray-400 text-base sm:text-lg">
             {t.about.subtitle}
           </p>
@@ -160,7 +161,7 @@ export default function AboutSection() {
 
                 <div className="p-4 pt-1 text-center relative z-10 bg-neutral-950">
                   <h4 className="text-lg font-black text-white uppercase tracking-wide leading-tight group-hover:text-emerald-400 transition-colors">
-                    {coach.name}
+                    {t.coaches[`c${coach.id}`].name}
                   </h4>
                   <div className="text-[10px] font-bold text-emerald-500 uppercase tracking-widest mt-1">
                     {coach.license}
@@ -168,10 +169,10 @@ export default function AboutSection() {
                   
                   <div className="mt-4 border-t border-neutral-800 pt-3">
                     <p className="text-[10px] font-bold text-gray-400 uppercase tracking-widest">
-                      {coach.role}
+                      {t.coaches[`c${coach.id}`].role}
                     </p>
                     <p className="text-xs text-emerald-400 mt-2">
-                      {coach.experience}
+                      {t.coaches[`c${coach.id}`].exp}
                     </p>
                   </div>
                 </div>

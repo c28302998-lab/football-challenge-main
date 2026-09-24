@@ -49,8 +49,8 @@ export default function NextMatch() {
           <div className="absolute top-0 right-0 -mt-20 -mr-20 w-64 h-64 bg-emerald-600/10 rounded-full blur-3xl"></div>
           
           <div className="text-center mb-6">
-            <h3 className="text-emerald-400 text-xs font-bold uppercase tracking-widest mb-1">Ближайший матч</h3>
-            <p className="text-gray-400 text-sm">Зимний Кубок г. Варшавы • Тур 5</p>
+            <h3 className="text-emerald-400 text-xs font-bold uppercase tracking-widest mb-1">{t.nextMatch?.title || 'Ближайший матч'}</h3>
+            <p className="text-gray-400 text-sm">{t.nextMatch?.league || 'Зимний Кубок г. Варшавы • Тур 5'}</p>
           </div>
 
           <div className="flex flex-col md:flex-row items-center justify-between gap-8 md:gap-4">
@@ -70,15 +70,15 @@ export default function NextMatch() {
               <div className="flex gap-3 text-center">
                 <div className="bg-neutral-950 border border-neutral-800 rounded-xl p-3 w-16 sm:w-20">
                   <div className="text-2xl sm:text-3xl font-black text-white font-mono">{String(timeLeft.days).padStart(2, '0')}</div>
-                  <div className="text-[10px] text-gray-500 uppercase font-bold mt-1">Дней</div>
+                  <div className="text-[10px] text-gray-500 uppercase font-bold mt-1">{t.nextMatch?.days || 'Дней'}</div>
                 </div>
                 <div className="bg-neutral-950 border border-neutral-800 rounded-xl p-3 w-16 sm:w-20">
                   <div className="text-2xl sm:text-3xl font-black text-white font-mono">{String(timeLeft.hours).padStart(2, '0')}</div>
-                  <div className="text-[10px] text-gray-500 uppercase font-bold mt-1">Часов</div>
+                  <div className="text-[10px] text-gray-500 uppercase font-bold mt-1">{t.nextMatch?.hours || 'Часов'}</div>
                 </div>
                 <div className="bg-neutral-950 border border-neutral-800 rounded-xl p-3 w-16 sm:w-20 hidden sm:block">
                   <div className="text-2xl sm:text-3xl font-black text-white font-mono">{String(timeLeft.minutes).padStart(2, '0')}</div>
-                  <div className="text-[10px] text-gray-500 uppercase font-bold mt-1">Минут</div>
+                  <div className="text-[10px] text-gray-500 uppercase font-bold mt-1">{t.nextMatch?.minutes || 'Минут'}</div>
                 </div>
               </div>
             </div>

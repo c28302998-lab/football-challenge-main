@@ -44,21 +44,20 @@ export default function Navbar() {
         </a>
 
         {/* Desktop Navigation Links */}
-        <nav className="hidden lg:flex items-center space-x-3 xl:space-x-6">
+        <nav className="hidden lg:flex items-center space-x-1 xl:space-x-2">
           {navLinks.map((link) => (
             <a
               key={link.href}
               href={link.href}
-              className="relative text-[10px] xl:text-[11px] font-bold uppercase tracking-[0.1em] xl:tracking-[0.15em] text-gray-400 hover:text-white transition-colors py-2 group whitespace-nowrap"
+              className="relative px-3 py-2 xl:px-4 xl:py-2.5 text-[10px] xl:text-[11px] font-black uppercase tracking-[0.15em] text-gray-300 hover:text-emerald-400 transition-all duration-300 rounded-xl hover:bg-emerald-500/10 whitespace-nowrap group"
             >
               {link.label}
-              <span className="absolute bottom-0 left-1/2 w-0 h-[2px] bg-emerald-500 transform -translate-x-1/2 group-hover:w-full transition-all duration-300 ease-out shadow-[0_0_8px_rgba(16,185,129,0.8)] rounded-full"></span>
             </a>
           ))}
         </nav>
 
         {/* Actions (Language Switcher, CTA Trial Button) */}
-        <div className="hidden lg:flex items-center space-x-3 xl:space-x-4 ml-4 xl:ml-8">
+        <div className="hidden lg:flex items-center space-x-4 xl:space-x-6 ml-auto pl-8 border-l border-neutral-800/50">
           
           {/* Language Selector Pill */}
           <div className="flex items-center bg-neutral-900/80 border border-neutral-800 rounded-full p-1 text-[10px] xl:text-xs">

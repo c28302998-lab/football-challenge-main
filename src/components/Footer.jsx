@@ -16,7 +16,7 @@ export default function Footer() {
           <div className="space-y-4">
             <Logo className="h-12" />
             <p className="text-gray-400 text-xs font-light leading-relaxed">
-              Развиваем талант. Создаем будущее. Профессиональная футбольная академия по европейским стандартам.
+              {t.hero?.slogan} {t.hero?.subtext}
             </p>
             <div className="flex items-center gap-2 text-emerald-400 font-mono text-[11px]">
               <ShieldCheck className="w-4 h-4" />
@@ -26,7 +26,7 @@ export default function Footer() {
 
           {/* Col 2: Navigation */}
           <div>
-            <h4 className="text-sm font-bold text-white uppercase mb-4">Навигация</h4>
+            <h4 className="text-sm font-bold text-white uppercase mb-4">{t.navTitle || 'Навигация'}</h4>
             <ul className="space-y-2">
               <li><a href="#about" className="hover:text-emerald-400 transition-colors">{t.nav.about}</a></li>
               <li><a href="#teams" className="hover:text-emerald-400 transition-colors">{t.nav.teams} (2008-2011)</a></li>
@@ -37,7 +37,7 @@ export default function Footer() {
 
           {/* Col 3: Academy */}
           <div>
-            <h4 className="text-sm font-bold text-white uppercase mb-4">Академия</h4>
+            <h4 className="text-sm font-bold text-white uppercase mb-4">{t.nav?.academy || 'Академия'}</h4>
             <ul className="space-y-2">
               <li><a href="#media" className="hover:text-emerald-400 transition-colors">{t.nav.video} & {t.nav.gallery}</a></li>
               <li><a href="#sponsors" className="hover:text-emerald-400 transition-colors">{t.nav.sponsors}</a></li>
@@ -48,7 +48,7 @@ export default function Footer() {
 
           {/* Col 4: Contacts summary */}
           <div>
-            <h4 className="text-sm font-bold text-white uppercase mb-4">Контакты</h4>
+            <h4 className="text-sm font-bold text-white uppercase mb-4">{t.contactsTitle || 'Контакты'}</h4>
             <p className="text-gray-400 font-mono">{siteSettings?.contactAddress || 'ul. Sportowa 15, Warsaw'}</p>
             <p className="text-gray-400 font-mono mt-1">{siteSettings?.contactPhone || '+48 600 123 456'}</p>
             <p className="text-emerald-400 font-mono mt-1">{siteSettings?.contactEmail || 'info@footballchallenge.com'}</p>
@@ -59,7 +59,7 @@ export default function Footer() {
         {/* Bottom Bar */}
         <div className="pt-8 border-t border-neutral-900 flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px] text-gray-500">
           <div>
-            {siteSettings?.footerText || '© 2026 Football Challenge Academy. Все права защищены.'}
+            {siteSettings?.footerText || `© 2026 Football Challenge Academy. ${t.footer?.rights || 'Все права защищены.'}`}
           </div>
           <div className="flex items-center gap-4">
             {siteSettings?.contactInsta && <a href={siteSettings.contactInsta} target="_blank" rel="noreferrer" className="hover:text-emerald-400 transition-colors">Instagram</a>}

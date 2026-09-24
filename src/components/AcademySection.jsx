@@ -81,7 +81,7 @@ export default function AcademySection() {
           <div className="text-center mb-8">
             <UserCheck className="w-10 h-10 text-emerald-400 mx-auto mb-2" />
             <h3 className="text-2xl font-black text-white uppercase">{t.academy.formTitle}</h3>
-            <p className="text-xs text-gray-400 mt-1">Заполните поля ниже, и мы свяжемся с вами</p>
+            <p className="text-xs text-gray-400 mt-1">{t.academy?.formSubtitle}</p>
           </div>
 
           {submitted ? (
@@ -98,7 +98,7 @@ export default function AcademySection() {
                     required
                     value={formData.fullName}
                     onChange={(e) => setFormData({ ...formData, fullName: e.target.value })}
-                    placeholder="Александр Иванов"
+                    placeholder={t.academy?.placeholderName}
                     className="w-full bg-neutral-950 border border-neutral-800 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-emerald-500"
                   />
                 </div>
@@ -110,10 +110,10 @@ export default function AcademySection() {
                     onChange={(e) => setFormData({ ...formData, birthYear: e.target.value, preferredTeam: e.target.value })}
                     className="w-full bg-neutral-950 border border-neutral-800 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-emerald-500"
                   >
-                    <option value="2008">2008 (U-17)</option>
-                    <option value="2009">2009 (U-16)</option>
-                    <option value="2010">2010 (U-15)</option>
-                    <option value="2011">2011 (U-14)</option>
+                    <option value="2008">2008</option>
+                    <option value="2009">2009</option>
+                    <option value="2010">2010</option>
+                    <option value="2011">2011</option>
                   </select>
                 </div>
               </div>
@@ -126,7 +126,7 @@ export default function AcademySection() {
                     required
                     value={formData.parentName}
                     onChange={(e) => setFormData({ ...formData, parentName: e.target.value })}
-                    placeholder="Михаил Иванов"
+                    placeholder={t.academy?.placeholderParent}
                     className="w-full bg-neutral-950 border border-neutral-800 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-emerald-500"
                   />
                 </div>

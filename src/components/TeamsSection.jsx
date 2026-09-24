@@ -45,12 +45,6 @@ export default function TeamsSection() {
                 <div className="text-2xl sm:text-3xl font-black font-mono tracking-tight">
                   {year}
                 </div>
-                <div className="text-xs font-semibold uppercase mt-1 text-emerald-400">
-                  {year === '2008' && 'U-17 Squad'}
-                  {year === '2009' && 'U-16 Squad'}
-                  {year === '2010' && 'U-15 Squad'}
-                  {year === '2011' && 'U-14 Squad'}
-                </div>
               </button>
             );
           })}
@@ -183,7 +177,7 @@ export default function TeamsSection() {
 
                           <div className="p-4 pt-1 text-center relative z-10 bg-neutral-950">
                             <h4 className="text-lg font-black text-white uppercase tracking-wide leading-tight group-hover:text-emerald-400 transition-colors">
-                              {team.coach.name}
+                              {globalCoach ? t.coaches[`c${globalCoach.id}`].name : team.coach.name}
                             </h4>
                             <div className="text-[10px] font-bold text-emerald-500 uppercase tracking-widest mt-1">
                               {team.coach.license}
@@ -191,7 +185,7 @@ export default function TeamsSection() {
                             
                             <div className="mt-4 border-t border-neutral-800 pt-3">
                               <p className="text-xs text-gray-400 font-light px-2 line-clamp-3">
-                                {team.coach.bio}
+                                {globalCoach ? t.coaches[`c${globalCoach.id}`].bio : team.coach.bio}
                               </p>
                             </div>
                             <div className="flex items-center justify-center gap-2 text-[10px] font-mono text-emerald-400 mt-4 bg-emerald-950/30 py-2 rounded-lg border border-emerald-900/50">

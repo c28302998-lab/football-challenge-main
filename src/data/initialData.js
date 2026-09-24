@@ -3,7 +3,7 @@ export const initialData = {
     {
       id: 1,
       name: "Александр Ковалев",
-      role: "Главный тренер U-17 (2008)",
+      role: "Główny trener (2008)",
       license: "UEFA 'A' License",
       experience: "12 лет опыта (экс-Legia Warszawa Youth)",
       image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=600&q=80",
@@ -11,7 +11,7 @@ export const initialData = {
     {
       id: 2,
       name: "Марек Новак",
-      role: "Главный тренер U-16 (2009)",
+      role: "Główny trener (2009)",
       license: "UEFA 'A' License",
       experience: "9 лет опыта (экс-Lech Poznan Academy)",
       image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=600&q=80",
@@ -19,7 +19,7 @@ export const initialData = {
     {
       id: 3,
       name: "Дмитрий Савченко",
-      role: "Главный тренер U-15 (2010)",
+      role: "Główny trener (2010)",
       license: "UEFA 'B' License",
       experience: "7 лет опыта (ДЮСШ Чемпион)",
       image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=600&q=80",
@@ -27,7 +27,7 @@ export const initialData = {
     {
       id: 4,
       name: "Томаш Вишневски",
-      role: "Главный тренер U-14 (2011)",
+      role: "Główny trener (2011)",
       license: "UEFA 'B' License",
       experience: "6 лет опыта (Физкультурная академия)",
       image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=600&q=80",
@@ -35,7 +35,7 @@ export const initialData = {
   ],
   teams: {
     "2008": {
-      name: "Football Challenge 2008 (U-17)",
+      name: "Football Challenge 2008",
       coach: {
         name: "Александр Ковалев",
         license: "UEFA 'A' License",
@@ -51,22 +51,22 @@ export const initialData = {
         { id: 6, name: "Груздов Олег", pos: "Правий півзахисник (RM)", num: 17, goals: 3, age: 18, image: "https://ui-avatars.com/api/?name=Груздов+Олег&background=1a1a1a&color=fff&size=300" },
       ],
       schedule: [
-        { id: 101, home: "FC Football Challenge 2008", away: "Legia Academy U-17", date: "2026-08-02", time: "12:00", stadium: "FC Arena Park", status: "Upcoming", league: "Elite Youth League" },
-        { id: 102, home: "Lech Poznan U-17", away: "FC Football Challenge 2008", date: "2026-08-09", time: "14:30", stadium: "Poznan Training Ctr", status: "Upcoming", league: "Elite Youth League" },
+        { id: 101, home: "FC Football Challenge 2008", away: "Legia Academy", date: "2026-08-02", time: "12:00", stadium: "FC Arena Park", status: "Upcoming", league: "Elite Youth League" },
+        { id: 102, home: "Lech Poznan", away: "FC Football Challenge 2008", date: "2026-08-09", time: "14:30", stadium: "Poznan Training Ctr", status: "Upcoming", league: "Elite Youth League" },
       ],
       results: [
-        { id: 103, home: "FC Football Challenge 2008", away: "Rakow Czestochowa U-17", score: "3 : 1", date: "2026-07-18", league: "Elite Youth League" },
-        { id: 104, home: "Wisla Krakow U-17", away: "FC Football Challenge 2008", score: "1 : 2", date: "2026-07-11", league: "Elite Youth League" },
+        { id: 103, home: "FC Football Challenge 2008", away: "Rakow Czestochowa", score: "3 : 1", date: "2026-07-18", league: "Elite Youth League" },
+        { id: 104, home: "Wisla Krakow", away: "FC Football Challenge 2008", score: "1 : 2", date: "2026-07-11", league: "Elite Youth League" },
       ],
       standings: [
         { rank: 1, team: "FC Football Challenge 2008", w: 12, d: 2, l: 1, gf: 38, ga: 12, pts: 38 },
-        { rank: 2, team: "Legia Academy U-17", w: 11, d: 3, l: 1, gf: 35, ga: 14, pts: 36 },
-        { rank: 3, team: "Lech Poznan U-17", w: 10, d: 2, l: 3, gf: 30, ga: 16, pts: 32 },
+        { rank: 2, team: "Legia Academy", w: 11, d: 3, l: 1, gf: 35, ga: 14, pts: 36 },
+        { rank: 3, team: "Lech Poznan", w: 10, d: 2, l: 3, gf: 30, ga: 16, pts: 32 },
         { rank: 4, team: "Rakow Youth 2008", w: 8, d: 4, l: 3, gf: 26, ga: 18, pts: 28 },
       ]
     },
     "2009": {
-      name: "Football Challenge 2009 (U-16)",
+      name: "Football Challenge 2009",
       coach: {
         name: "Марек Новак",
         license: "UEFA 'A' License",
@@ -88,18 +88,18 @@ export const initialData = {
         { id: 32, name: "Жувак Даніїл", pos: "Лівий вінгер (LW)", num: 11, goals: 4, age: 16, image: "https://ui-avatars.com/api/?name=Жувак+Даніїл&background=1a1a1a&color=fff&size=300" },
       ],
       schedule: [
-        { id: 201, home: "Jagiellonia U-16", away: "FC Football Challenge 2009", date: "2026-08-01", time: "11:00", stadium: "Bialystok Complex", status: "Upcoming", league: "U-16 National Cup" },
+        { id: 201, home: "Jagiellonia", away: "FC Football Challenge 2009", date: "2026-08-01", time: "11:00", stadium: "Bialystok Complex", status: "Upcoming", league: "U-16 National Cup" },
       ],
       results: [
-        { id: 202, home: "FC Football Challenge 2009", away: "Slask Wroclaw U-16", score: "4 : 0", date: "2026-07-20", league: "U-16 National Cup" },
+        { id: 202, home: "FC Football Challenge 2009", away: "Slask Wroclaw", score: "4 : 0", date: "2026-07-20", league: "U-16 National Cup" },
       ],
       standings: [
         { rank: 1, team: "FC Football Challenge 2009", w: 10, d: 3, l: 0, gf: 34, ga: 8, pts: 33 },
-        { rank: 2, team: "Slask Wroclaw U-16", w: 9, d: 2, l: 2, gf: 29, ga: 15, pts: 29 },
+        { rank: 2, team: "Slask Wroclaw", w: 9, d: 2, l: 2, gf: 29, ga: 15, pts: 29 },
       ]
     },
     "2010": {
-      name: "Football Challenge 2010 (U-15)",
+      name: "Football Challenge 2010",
       coach: {
         name: "Дмитрий Савченко",
         license: "UEFA 'B' License",
@@ -116,18 +116,18 @@ export const initialData = {
         { id: 57, name: "Вадатурський Іван", pos: "Центр. півзахисник (CM)", num: 8, goals: 1, age: 15, image: "https://ui-avatars.com/api/?name=Вадатурський+Іван&background=1a1a1a&color=fff&size=300" },
       ],
       schedule: [
-        { id: 301, home: "FC Football Challenge 2010", away: "Pogon Szczecin U-15", date: "2026-08-05", time: "16:00", stadium: "FC Arena Field 2", status: "Upcoming", league: "U-15 Junior League" },
+        { id: 301, home: "FC Football Challenge 2010", away: "Pogon Szczecin", date: "2026-08-05", time: "16:00", stadium: "FC Arena Field 2", status: "Upcoming", league: "U-15 Junior League" },
       ],
       results: [
-        { id: 302, home: "Gornik Zabrze U-15", away: "FC Football Challenge 2010", score: "2 : 2", date: "2026-07-15", league: "U-15 Junior League" },
+        { id: 302, home: "Gornik Zabrze", away: "FC Football Challenge 2010", score: "2 : 2", date: "2026-07-15", league: "U-15 Junior League" },
       ],
       standings: [
-        { rank: 1, team: "Pogon Szczecin U-15", w: 8, d: 2, l: 1, gf: 24, ga: 10, pts: 26 },
+        { rank: 1, team: "Pogon Szczecin", w: 8, d: 2, l: 1, gf: 24, ga: 10, pts: 26 },
         { rank: 2, team: "FC Football Challenge 2010", w: 7, d: 4, l: 0, gf: 27, ga: 11, pts: 25 },
       ]
     },
     "2011": {
-      name: "Football Challenge 2011 (U-14)",
+      name: "Football Challenge 2011",
       coach: {
         name: "Томаш Вишневски",
         license: "UEFA 'B' License",
@@ -140,14 +140,14 @@ export const initialData = {
         { id: 73, name: "Кротов Ілля", pos: "Центр. півзахисник (CM)", num: 8, goals: 0, age: 14, image: "https://ui-avatars.com/api/?name=Кротов+Ілля&background=1a1a1a&color=fff&size=300" },
       ],
       schedule: [
-        { id: 401, home: "FC Football Challenge 2011", away: "Cracovia U-14", date: "2026-08-08", time: "10:00", stadium: "FC Arena Field 3", status: "Upcoming", league: "Young Stars Cup" },
+        { id: 401, home: "FC Football Challenge 2011", away: "Cracovia", date: "2026-08-08", time: "10:00", stadium: "FC Arena Field 3", status: "Upcoming", league: "Young Stars Cup" },
       ],
       results: [
-        { id: 402, home: "Korona Kielce U-14", away: "FC Football Challenge 2011", score: "1 : 3", date: "2026-07-19", league: "Young Stars Cup" },
+        { id: 402, home: "Korona Kielce", away: "FC Football Challenge 2011", score: "1 : 3", date: "2026-07-19", league: "Young Stars Cup" },
       ],
       standings: [
         { rank: 1, team: "FC Football Challenge 2011", w: 9, d: 1, l: 0, gf: 31, ga: 6, pts: 28 },
-        { rank: 2, team: "Cracovia U-14", w: 7, d: 2, l: 1, gf: 22, ga: 10, pts: 23 },
+        { rank: 2, team: "Cracovia", w: 7, d: 2, l: 1, gf: 22, ga: 10, pts: 23 },
       ]
     }
   },

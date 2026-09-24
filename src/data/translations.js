@@ -1,5 +1,7 @@
 export const translations = {
   ru: {
+    navTitle: "Навигация",
+    contactsTitle: "Контакты",
     nav: {
       about: "О клубе",
       teams: "Команды",
@@ -167,6 +169,9 @@ export const translations = {
       email: "E-mail",
       preferredTeam: "Выбор команды",
       submitTrial: "Отправить заявку",
+      formSubtitle: "Заполните поля ниже, и мы свяжемся с вами",
+      placeholderName: "Имя Фамилия",
+      placeholderParent: "Родитель",
       successMsg: "Ваша заявка успешно отправлена! Тренер свяжется с вами в течение 24 часов.",
     },
     contacts: {
@@ -180,6 +185,14 @@ export const translations = {
       openMap: "Открыть в Google Maps",
       mapTitle: "Карта и локация",
     },
+
+    coaches: {
+      c1: { name: "Александр Ковалев", role: "Главный тренер (2008)", exp: "12 лет опыта", bio: "Специализируется на тактической подготовке и физической выносливости." },
+      c2: { name: "Марек Новак", role: "Главный тренер (2009)", exp: "9 лет опыта", bio: "Эксперт по комбинационному футболу и технике контроля мяча." },
+      c3: { name: "Дмитрий Савченко", role: "Главный тренер (2010)", exp: "7 лет опыта", bio: "Фокус на координации, индивидуальном дриблинге и прессинге." },
+      c4: { name: "Томаш Вишневски", role: "Главный тренер (2011)", exp: "6 лет опыта", bio: "Развивает футбольный интеллект и радость от игры." }
+    },
+
     admin: {
       title: "ПАНЕЛЬ АДМИНИСТРАТОРА (CMS)",
       subtitle: "Управление новостями, результатами матчей, медиа и заявками",
@@ -204,6 +217,8 @@ export const translations = {
     }
   },
   uk: {
+    navTitle: "Навігація",
+    contactsTitle: "Контакти",
     nav: {
       about: "Про клуб",
       teams: "Команди",
@@ -371,6 +386,9 @@ export const translations = {
       email: "E-mail",
       preferredTeam: "Вибір команди",
       submitTrial: "Надіслати заявку",
+      formSubtitle: "Заповніть поля нижче, і ми зв'яжемося з вами",
+      placeholderName: "Ім'я Прізвище",
+      placeholderParent: "Батьки",
       successMsg: "Вашу заявку успішно надіслано! Тренер зв'яжеться з вами протягом 24 годин.",
     },
     contacts: {
@@ -384,6 +402,14 @@ export const translations = {
       openMap: "Відкрити в Google Maps",
       mapTitle: "Карта та локація",
     },
+
+    coaches: {
+      c1: { name: "Олександр Ковальов", role: "Головний тренер (2008)", exp: "12 років досвіду", bio: "Спеціалізується на тактичній підготовці та фізичній витривалості." },
+      c2: { name: "Марек Новак", role: "Головний тренер (2009)", exp: "9 років досвіду", bio: "Експерт з комбінаційного футболу та техніки контролю м'яча." },
+      c3: { name: "Дмитро Савченко", role: "Головний тренер (2010)", exp: "7 років досвіду", bio: "Фокус на координації, індивідуальному дриблінгу та пресингу." },
+      c4: { name: "Томаш Вишневський", role: "Головний тренер (2011)", exp: "6 років досвіду", bio: "Розвиває футбольний інтелект та радість від гри." }
+    },
+
     admin: {
       title: "ПАНЕЛЬ АДМІНІСТРАТОРА (CMS)",
       subtitle: "Управління новинами, результатами матчів, медіа та заявками",
@@ -408,6 +434,8 @@ export const translations = {
     }
   },
   pl: {
+    navTitle: "Nawigacja",
+    contactsTitle: "Kontakt",
     nav: {
       about: "O klubie",
       teams: "Drużyny",
@@ -575,6 +603,9 @@ export const translations = {
       email: "E-mail",
       preferredTeam: "Wybór drużyny",
       submitTrial: "Wyślij zgłoszenie",
+      formSubtitle: "Wypełnij poniższe pola, a my skontaktujemy się z Tobą",
+      placeholderName: "Imię i nazwisko",
+      placeholderParent: "Rodzic",
       successMsg: "Twoje zgłoszenie zostało wysłane! Trener skontaktuje się z Tobą w ciągu 24h.",
     },
     contacts: {
@@ -588,6 +619,14 @@ export const translations = {
       openMap: "Otwórz w Google Maps",
       mapTitle: "Lokalizacja na mapie",
     },
+
+    coaches: {
+      c1: { name: "Aleksander Kowalew", role: "Główny trener (2008)", exp: "12 lat doświadczenia", bio: "Specjalizuje się w przygotowaniu taktycznym i wytrzymałości fizycznej." },
+      c2: { name: "Marek Nowak", role: "Główny trener (2009)", exp: "9 lat doświadczenia", bio: "Ekspert w piłce kombinacyjnej i technice kontroli piłki." },
+      c3: { name: "Dmytro Sawczenko", role: "Główny trener (2010)", exp: "7 lat doświadczenia", bio: "Skupienie na koordynacji, indywidualnym dryblingu i pressingu." },
+      c4: { name: "Tomasz Wiśniewski", role: "Główny trener (2011)", exp: "6 lat doświadczenia", bio: "Rozwija inteligencję piłkarską i radość z gry." }
+    },
+
     admin: {
       title: "PANEL ADMINISTRATORA (CMS)",
       subtitle: "Zarządzanie aktualnościami, wynikami meczów, mediami i zgłoszeniami",
@@ -612,6 +651,8 @@ export const translations = {
     }
   },
   en: {
+    navTitle: "Navigation",
+    contactsTitle: "Contacts",
     nav: {
       about: "About Club",
       teams: "Teams",
@@ -779,6 +820,9 @@ export const translations = {
       email: "E-mail",
       preferredTeam: "Select Team",
       submitTrial: "Submit Application",
+      formSubtitle: "Fill out the fields below and we will contact you",
+      placeholderName: "Full Name",
+      placeholderParent: "Parent",
       successMsg: "Application sent successfully! Coach will contact you within 24 hours.",
     },
     contacts: {
@@ -792,6 +836,14 @@ export const translations = {
       mapTitle: "Location Map",
       openMap: "Open in Google Maps",
     },
+
+    coaches: {
+      c1: { name: "Alexander Kovalev", role: "Head Coach (2008)", exp: "12 years experience", bio: "Specializes in tactical preparation and physical endurance." },
+      c2: { name: "Marek Nowak", role: "Head Coach (2009)", exp: "9 years experience", bio: "Expert in combination football and ball control technique." },
+      c3: { name: "Dmitry Savchenko", role: "Head Coach (2010)", exp: "7 years experience", bio: "Focus on coordination, individual dribbling, and pressing." },
+      c4: { name: "Tomasz Wisniewski", role: "Head Coach (2011)", exp: "6 years experience", bio: "Develops football intelligence and joy of the game." }
+    },
+
     admin: {
       title: "ADMIN PANEL (CMS)",
       subtitle: "Manage news, match scores, media library, and incoming submissions",
