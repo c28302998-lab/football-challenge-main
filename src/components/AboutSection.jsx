@@ -1,6 +1,7 @@
 import React from 'react';
 import { useApp } from '../context/AppContext';
 import { ShieldCheck, Target, Award, Users, ChevronRight } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 export default function AboutSection() {
   const { t, coaches, partners, siteSettings } = useApp();
@@ -36,7 +37,13 @@ export default function AboutSection() {
         {/* History & Mission Cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-20">
           
-          <div className="glass-panel p-8 rounded-3xl border border-neutral-800 hover:border-emerald-500/40 transition-all group">
+          <motion.div 
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+            className="glass-panel p-8 rounded-3xl border border-neutral-800 hover:border-emerald-500/40 transition-all group"
+          >
             <div className="w-14 h-14 rounded-2xl bg-emerald-950 border border-emerald-500/30 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
               <ShieldCheck className="w-7 h-7 text-emerald-400" />
             </div>
@@ -52,9 +59,15 @@ export default function AboutSection() {
                 return text;
               })()}
             </p>
-          </div>
+          </motion.div>
 
-          <div className="glass-panel p-8 rounded-3xl border border-neutral-800 hover:border-emerald-500/40 transition-all group">
+          <motion.div 
+            initial={{ opacity: 0, x: 50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.6, ease: "easeOut", delay: 0.2 }}
+            className="glass-panel p-8 rounded-3xl border border-neutral-800 hover:border-emerald-500/40 transition-all group"
+          >
             <div className="w-14 h-14 rounded-2xl bg-emerald-950 border border-emerald-500/30 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
               <Target className="w-7 h-7 text-emerald-400" />
             </div>
@@ -64,7 +77,7 @@ export default function AboutSection() {
             <p className="text-gray-300 leading-relaxed font-light whitespace-pre-wrap">
               {siteSettings.missionText || t.about.missionText}
             </p>
-          </div>
+          </motion.div>
 
         </div>
 
@@ -82,10 +95,15 @@ export default function AboutSection() {
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {coaches.map((coach) => (
-              <div 
+            {coaches.map((coach, index) => (
+              <motion.div 
                 key={coach.id} 
-                className="group relative bg-neutral-950 rounded-2xl border border-neutral-800 overflow-hidden cursor-pointer hover:-translate-y-1 hover:shadow-2xl hover:shadow-emerald-900/20 transition-all duration-300"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.1 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                whileHover={{ y: -8, scale: 1.02, transition: { type: "spring", stiffness: 400, damping: 25 } }}
+                className="group relative bg-neutral-950 rounded-2xl border border-neutral-800 overflow-hidden cursor-pointer hover:shadow-2xl hover:shadow-emerald-900/20 transition-shadow duration-300"
               >
                 <div className="relative aspect-[3/4] w-full overflow-hidden border-b-2 border-emerald-500/20">
                   <div className="absolute top-3 left-3 text-3xl font-black italic text-emerald-500 drop-shadow-md z-10 font-mono">
@@ -116,7 +134,7 @@ export default function AboutSection() {
                     </p>
                   </div>
                 </div>
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>
@@ -130,10 +148,15 @@ export default function AboutSection() {
           </div>
 
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 items-center">
-            {partners.map((partner) => (
-              <div 
+            {partners.map((partner, index) => (
+              <motion.div 
                 key={partner.id} 
-                className="glass-panel p-4 rounded-xl border border-neutral-800 flex items-center justify-center gap-3 hover:border-emerald-500/40 transition-all"
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true, amount: 0.1 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                whileHover={{ y: -5, scale: 1.05, transition: { type: "spring", stiffness: 400, damping: 25 } }}
+                className="glass-panel p-4 rounded-xl border border-neutral-800 flex items-center justify-center gap-3 hover:border-emerald-500/40 transition-colors"
               >
                 <img 
                   src={partner.logo} 
@@ -144,7 +167,7 @@ export default function AboutSection() {
                   <div className="text-xs font-bold text-white">{partner.name}</div>
                   <div className="text-[10px] text-emerald-400">{partner.type}</div>
                 </div>
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>
