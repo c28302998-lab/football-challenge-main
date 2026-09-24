@@ -56,16 +56,17 @@ export function AppProvider({ children }) {
       if (docSnap.exists()) {
         const data = docSnap.data();
         if (data.news) setNews(data.news);
-        if (data.teamsData) setTeamsData(data.teamsData);
+        // Do not load static content from Firebase so code updates apply:
+        // if (data.teamsData) setTeamsData(data.teamsData);
         if (data.videos) setVideos(data.videos);
         if (data.photos) setPhotos(data.photos);
         if (data.trialApplications) setTrialApplications(data.trialApplications);
         if (data.sponsorApplications) setSponsorApplications(data.sponsorApplications);
         if (data.siteSettings) setSiteSettings(data.siteSettings);
         if (data.themeSettings) setThemeSettings(data.themeSettings);
-        if (data.customTranslations) setCustomTranslations(data.customTranslations);
-        if (data.coaches) setCoaches(data.coaches);
-        if (data.partners) setPartners(data.partners);
+        // if (data.customTranslations) setCustomTranslations(data.customTranslations);
+        // if (data.coaches) setCoaches(data.coaches);
+        // if (data.partners) setPartners(data.partners);
         if (data.adminPassword) setAdminPassword(data.adminPassword);
       } else {
         await setDoc(docRef, {
@@ -120,7 +121,7 @@ export function AppProvider({ children }) {
     document.documentElement.style.setProperty('--color-emerald-950', shadeColor(hex, -80));
   }, [themeSettings]);
 
-  const t = customTranslations[lang] || customTranslations.ru;
+  const t = translations[lang] || translations.ru;
 
   const updateAndSaveCustomTranslations = (updated) => {
     setCustomTranslations(updated);

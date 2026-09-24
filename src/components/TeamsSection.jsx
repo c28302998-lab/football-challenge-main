@@ -61,7 +61,7 @@ export default function TeamsSection() {
                   {team.name}
                 </h3>
                 <p className="text-sm text-gray-400 mt-1">
-                  {t.teams.tabs.coach}: <span className="text-emerald-400 font-semibold">{team.coach.name}</span> ({team.coach.license})
+                  {t.teams.tabs.coach}: <span className="text-emerald-400 font-semibold">{t.coaches?.[`c${['2008', '2009', '2010', '2011'].indexOf(selectedYear) + 1}`]?.name || team.coach.name}</span> ({team.coach.license})
                 </p>
               </div>
 
